@@ -1,0 +1,70 @@
+<h1>Estrutura básica de uma arquivo HTML</h1>
+<p>Um arquivo HTML possui uma estrutura básica necessária ao seu perfeito funcionamento.</p>
+<p>Esta estrutura é formada por informações sobre o arquivo e duas partes principais: <code>head</code> e
+    <code>body</code>
+</p>
+<p>Cada parte que compõem um arquivo HTML é chamada de <strong>tag</strong>, que são trechos de código escritos entre os
+    caracteres <code>&lt;</code> e <code>&gt;</code></p>
+<p>As tags de abertura são representadas das seguinte forma:</p>
+<p><code>&lt;nome_da_tag&gt;</code></p>
+<p>E as tags de fechamento devem incluio o caractere <code>/</code>:</p>
+<p><code>&lt;/nome_da_tag&gt;</code></p>
+<h2>Indicando o tipo de documento</h2>
+<p>No início dos documentos HTML é necessário incluir a declaração de tipo de documento, para isso, utilizamos a tag
+    <code>DOCTYPE</code>
+</p>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p>Note que a tag
+    <code>&lt;!DOCTYPE html&gt;</code> é uma tag que não possui uma tag de fechamento, por isso também é conhecida como
+    <em>self-closed</em>.
+</p>
+<h2>A tag &lt;html&gt;</h2>
+<p>Após a declaração do tipo de documento, é necessário incluir a tag <code>&lt;html&gt;</code> em nosso documento. É
+    nessa tag que informamos qual é o idioma e a localização geográfica do nosso site:</p>
+<p><code>&lt;html lang="pt-BR"&gt;</code></p>
+<p>Note que dentro do <em><abbr
+            title="Característica ou propriedade de um elemento que fornece informações adicionais ou modifica o comportamento do elemento">atributo</abbr></em>
+    <code>lang</code> temos um valor composto por dois termos, <code>pt</code> e
+    <code>BR</code>, onde <code>pt</code> corresponde ao <strong>Código de Idioma</strong> (Language Codes) definidos
+    pela ISO 639-1. A lista completa de <strong>Language Codes</strong> pode ser vista no link <a
+        href="https://www.w3schools.com/tags/ref_language_codes.asp"
+        target="_blank">https://www.w3schools.com/tags/ref_language_codes.asp</a>
+</p>
+<p>Já o <code>BR</code> corresponde ao <strong>Código do País</strong> (Country Code), que também obedece a um padrão
+    ISO. A lista completa de <strong>Country Codes</strong> pode acessada no link <a
+        href="https://www.w3schools.com/tags/ref_country_codes.asp"
+        target="_blank">https://www.w3schools.com/tags/ref_country_codes.asp</a>
+</p>
+<h2>A tag &lt;head&gt;</h2>
+<p>A tag <code>&lt;head&gt;</code> é responsável por conter informações <em>meta</em> sobre o documento HTML. Diferente
+    da tag <code>&lt;body&gt;</code>, que exibe conteúdo visível para o usuário, tudo o que está dentro do
+    <code>&lt;head&gt;</code> é voltado para configurações, descrições, links para recursos externos e outros dados que
+    ajudam navegadores e motores de busca a interpretar e apresentar corretamente a página.
+</p>
+<p>Um exemplo simples de uso da tag <code>&lt;head&gt;</code> seria:</p>
+<div class="html">
+    <pre><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt; </code></pre>
+</div>
+<h3><code>&lt;meta charset="UTF-8"&gt;</code></h3>
+
+<p>Esse elemento define a codificação de caracteres do documento, e o valor <code>UTF-8</code> é atualmente o mais
+    recomendado, pois suporta praticamente todos os caracteres e símbolos usados mundialmente — incluindo acentos e
+    caracteres especiais do português.</p>
+<h3><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></h3>
+
+<p>Essa configuração é essencial para garantir que o site seja exibido corretamente em dispositivos móveis. O atributo
+    <code>width=device-width</code> ajusta a largura da página para a largura da tela do dispositivo, enquanto
+    <code>initial-scale=1.0</code> define o nível inicial de zoom. Sem essa meta tag, o layout pode ficar
+    desproporcional em celulares e tablets.
+</p>
+<h3><code>&lt;title&gt;Document&lt;/title&gt;</code></h3>
+
+<p>A tag <code>&lt;title&gt;</code> define o título da página, que aparece na aba do navegador e também é usado como
+    título principal pelo Google e outros motores de busca nos resultados de pesquisa. É recomendado usar um título
+    descritivo e relevante para melhorar a usabilidade e o SEO (Search Engine Optimization).</p>
+<p>O conteúdo dentro de <code>&lt;head&gt;</code> não é visível diretamente para o usuário, mas é fundamental para o
+    funcionamento adequado do site, sua acessibilidade, responsividade e posicionamento nos mecanismos de busca.</p>
