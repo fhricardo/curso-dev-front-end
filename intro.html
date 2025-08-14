@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material de Apoio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/fontawesome.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <p class="lead">https://fhricardo.github.io/curso-dev-front-end/</p>
+    </div>
+    <header>
+        <div class="logo">
+            Desenvolvimento Front-end
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="intro.html" class="active" aria-current="page">Introdução</a>
+            <a href="html.html">HTML</a>
+            <a href="css.html">CSS</a>
+            <a href="javascript.html">JavaScript</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
+    <main>
+        <aside class="menu">
+            <a href="#" onclick="loadPageContent('contents/intro.html')">Introdução</a>
+            <a href="#" onclick="loadPageContent('contents/conventions.html')">Convenções</a>
+            <a href="#" onclick="loadPageContent('contents/internet.html')">A Internet</a>
+            <a href="#" onclick="loadPageContent('contents/vscode.html')">O VS Code</a>
+            <a href="#" onclick="loadPageContent('contents/git.html')">O Git</a>
+        </aside>
+        <section class="contents">
+            <h1>Bem-vindo ao Curso de Desenvolvimento Front-end</h1>
+            <p>Você está prestes a mergulhar no universo da criação de interfaces web — a parte responsável por tudo o
+                que o
+                usuário vê, interage e sente ao navegar por um site ou aplicativo.</p>
+            <p>Neste curso, você vai aprender a desenvolver páginas e aplicações modernas utilizando
+                <strong>HTML5</strong>,
+                <strong>CSS3</strong> e <strong>JavaScript</strong>, entendendo como estruturar o conteúdo, aplicar
+                estilos
+                responsivos e criar interatividade para oferecer experiências fluidas e envolventes.
+            </p>
+            <p>Não importa se você está começando agora ou já tem algum conhecimento: o conteúdo foi estruturado para te
+                dar base
+                sólida, apresentar boas práticas e desenvolver sua capacidade de criar interfaces funcionais, atraentes
+                e prontas
+                para o mercado.</p>
+            <p>Preparado para transformar suas ideias em experiências incríveis para a web? Então vamos começar!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;<span id="year"></span>. Professor Flávio Ricardo.</p>
+    </footer>
+</body>
+
+</html>
