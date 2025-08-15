@@ -21,7 +21,7 @@
 <h2>A tag &lt;html&gt;</h2>
 <p>Após a declaração do tipo de documento, é necessário incluir a tag <code>&lt;html&gt;</code> em nosso documento. É
     nessa tag que informamos qual é o idioma e a localização geográfica do nosso site:</p>
-<p><code>&lt;html lang="pt-BR"&gt;</code></p>
+<div class="html"><code><pre>&lt;html lang="pt-BR"&gt;</pre></code></div>
 <p>Note que dentro do <em><abbr
             title="Característica ou propriedade de um elemento que fornece informações adicionais ou modifica o comportamento do elemento">atributo</abbr></em>
     <code>lang</code> temos um valor composto por dois termos, <code>pt</code> e
@@ -43,15 +43,16 @@
 </p>
 <p>Um exemplo simples de uso da tag <code>&lt;head&gt;</code> seria:</p>
 <div class="html">
-    <pre><code>&lt;head&gt;
+    <code><pre>&lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt; </code></pre>
+&lt;/head&gt;</pre></code>
 </div>
 <h3><code>&lt;meta charset="UTF-8"&gt;</code></h3>
 
-<p>Esse elemento define a codificação de caracteres do documento, e o valor <code>UTF-8</code> é atualmente o mais
+<p>Esse elemento define a codificação de caracteres do documento, conhecido como <strong>Character Set</strong>, e o
+    valor <code>UTF-8</code> é atualmente o mais
     recomendado, pois suporta praticamente todos os caracteres e símbolos usados mundialmente — incluindo acentos e
     caracteres especiais do português.</p>
 <h3><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></h3>
@@ -68,3 +69,40 @@
     descritivo e relevante para melhorar a usabilidade e o SEO (Search Engine Optimization).</p>
 <p>O conteúdo dentro de <code>&lt;head&gt;</code> não é visível diretamente para o usuário, mas é fundamental para o
     funcionamento adequado do site, sua acessibilidade, responsividade e posicionamento nos mecanismos de busca.</p>
+<h2>A tag &lt;body&gt;</h2>
+<p>A tag <strong>&lt;body&gt;</strong> é a parte do documento HTML onde colocamos todo o conteúdo visível ao usuário. É
+    dentro dela que ficam textos, imagens, vídeos, links, formulários e qualquer outro elemento que será exibido na tela
+    do navegador.</p>
+<p>Enquanto a tag <code>&lt;head&gt;</code> serve para configurações e informações que não aparecem diretamente para o
+    usuário, a tag <code>&lt;body&gt;</code> contém tudo aquilo que o visitante realmente verá e com o que poderá
+    interagir.</p>
+<div class="html">
+    <code><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Primeiro Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao meu site!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de exemplo dentro do corpo do documento.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt; </pre></code>
+</div>
+
+<h3>O que pode ir dentro do &lt;body&gt;</h3>
+<p>No <code>&lt;body&gt;</code>, podemos incluir diversos elementos, como:</p>
+<ul>
+    <li>Títulos (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>)</li>
+    <li>Parágrafos (<code>&lt;p&gt;</code>)</li>
+    <li>Imagens (<code>&lt;img&gt;</code>)</li>
+    <li>Links (<code>&lt;a&gt;</code>)</li>
+    <li>Listas (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code>)</li>
+    <li>Formulários e botões</li>
+    <li>Scripts e outros recursos interativos</li>
+</ul>
+<h3>Importância da tag &lt;body&gt;</h3>
+<p>O conteúdo dentro do <code>&lt;body&gt;</code> é o que define a experiência do usuário no site. Um corpo bem
+    estruturado, com elementos organizados e semânticos, contribui para uma navegação intuitiva e acessível, além de
+    ajudar mecanismos de busca a entender melhor o conteúdo da página.</p>

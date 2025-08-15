@@ -41,6 +41,10 @@ const loadPageContent = (target) => {
             if (contentContainer) {
                 contentContainer.innerHTML = html;
                 activateImageHover(); // Ativa comportamento após o conteúdo ser inserido
+                // Chama o realce de sintaxe
+                if (typeof applySyntax === 'function') {
+                    applySyntax();
+                }
             }
         })
         .catch(error => console.error('Erro ao carregar página:', error));
