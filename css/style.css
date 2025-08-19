@@ -296,6 +296,7 @@ main {
         p,
         ul {
             padding-left: 1rem;
+            margin-bottom: 0.5rem;
 
             code {
                 font-family: "Reddit Mono", monospace;

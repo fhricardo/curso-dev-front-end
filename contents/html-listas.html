@@ -1,1 +1,85 @@
-<h1>Listas</h1>
+<h2>Listas em HTML</h2>
+<p>
+    Em HTML, listas são estruturas usadas para organizar informações em sequência ou em tópicos.
+    Elas são úteis para menus, conteúdos ordenados, glossários, entre outros.
+    Existem três tipos principais de listas: <strong>não ordenadas</strong>, <strong>ordenadas</strong>
+    e <strong>de definição</strong>.
+</p>
+
+<h3>1. Lista Não Ordenada (&lt;ul&gt;)</h3>
+<p>
+    A lista não ordenada exibe os itens com marcadores simples (como pontos).
+    É indicada quando a ordem dos elementos não importa, por exemplo, uma lista de compras.
+</p>
+<div class="html">
+    <code><pre>&lt;ul&gt;
+    &lt;li&gt;Maçãs&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+    &lt;li&gt;Laranjas&lt;/li&gt;
+&lt;/ul&gt;</pre></code>
+</div>
+<div class="browser">
+    <ul>
+        <li>Maçãs</li>
+        <li>Bananas</li>
+        <li>Laranjas</li>
+    </ul>
+</div>
+
+<h3>2. Lista Ordenada (&lt;ol&gt;)</h3>
+<p>
+    A lista ordenada mostra os itens numerados (1, 2, 3...) ou em outras formas de contagem
+    (letras ou algarismos romanos, por exemplo).
+    É usada quando a ordem é relevante, como em um passo a passo de instruções.
+</p>
+<div class="html">
+    <code><pre>&lt;ol&gt;
+    &lt;li&gt;Pré-aquecer o forno&lt;/li&gt;
+    &lt;li&gt;Misturar os ingredientes&lt;/li&gt;
+    &lt;li&gt;Assar por 30 minutos&lt;/li&gt;
+&lt;/ol&gt;</pre></code>
+</div>
+<div class="browser">
+    <ol>
+        <li>Pré-aquecer o forno</li>
+        <li>Misturar os ingredientes</li>
+        <li>Assar por 30 minutos</li>
+    </ol>
+</div>
+
+<h3>3. Lista de Definição (&lt;dl&gt;)</h3>
+<p>
+    A lista de definição é composta por termos (&lt;dt&gt;) e suas descrições (&lt;dd&gt;).
+    É indicada para glossários, FAQs ou informações onde há um par termo/explicação.
+</p>
+<div class="html">
+    <code><pre>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Linguagem de marcação para estruturar páginas web.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Folhas de estilo em cascata usadas para design e layout.&lt;/dd&gt;
+
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Linguagem de programação usada para interatividade.&lt;/dd&gt;
+&lt;/dl&gt;</pre></code>
+</div>
+<div class="browser">
+    <dl>
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação para estruturar páginas web.</dd>
+
+        <dt>CSS</dt>
+        <dd>Folhas de estilo em cascata usadas para design e layout.</dd>
+
+        <dt>JavaScript</dt>
+        <dd>Linguagem de programação usada para interatividade.</dd>
+    </dl>
+</div>
+
+<h3>Resumo</h3>
+<p>
+    - Use <code>&lt;ul&gt;</code> quando a ordem não for importante. <br>
+    - Use <code>&lt;ol&gt;</code> quando a sequência dos itens tiver relevância. <br>
+    - Use <code>&lt;dl&gt;</code> quando precisar associar termos a descrições.
+</p>
