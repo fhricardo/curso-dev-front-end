@@ -5,7 +5,7 @@
     <strong>semântica</strong> da página, ajudando navegadores, leitores de tela e motores de busca a entenderem a
     estrutura e a importância de cada parte do conteúdo.
 </p>
-
+<!-- Headings -->
 <h2>Títulos: &lt;h1&gt; a &lt;h6&gt;</h2>
 <p>No HTML, temos seis níveis de títulos, representados pelas tags <code>&lt;h1&gt;</code> até <code>&lt;h6&gt;</code>.
     O <code>&lt;h1&gt;</code> é o título mais importante da página, geralmente usado para o assunto principal, enquanto
@@ -31,7 +31,7 @@
     <h5>Título de menor importância</h5>
     <h6>Último nível de título</h6>
 </div>
-
+<!-- Paragraph -->
 <h2>Parágrafos: &lt;p&gt;</h2>
 <p>A tag <code>&lt;p&gt;</code> é utilizada para criar parágrafos. Cada parágrafo representa um bloco de texto separado,
     facilitando a leitura e organização do conteúdo.</p>
@@ -41,7 +41,7 @@
 <div class="browser">
     <p>Este é um parágrafo de exemplo.</p>
 </div>
-
+<!-- Span Text -->
 <h2>Texto em linha: &lt;span&gt;</h2>
 <p>A tag <code>&lt;span&gt;</code> é um elemento <em>inline</em> que não possui significado semântico específico, mas é
     muito útil para aplicar estilos ou manipular trechos de texto específicos com CSS ou JavaScript.</p>
@@ -51,7 +51,7 @@
 <div class="browser">
     <p>Podemos destacar <span style="color: red;">apenas esta parte</span> de um parágrafo.</p>
 </div>
-
+<!-- Strong and Emphsis -->
 <h2>Negrito e ênfase: &lt;strong&gt; e &lt;em&gt;</h2>
 <p>A tag <code>&lt;strong&gt;</code> indica que um trecho de texto é importante, geralmente exibido em
     <strong>negrito</strong>.
@@ -66,6 +66,44 @@
 <div class="browser">
     <p>Este é um texto com <strong>destaque importante</strong> e com <em>ênfase especial</em>.</p>
 </div>
+<!-- Inserted and Deleted -->
+<h2>Texto inserido e deletado: &lt;ins&gt; e &lt;del&gt;</h2>
+<p>
+    A tag <code>&lt;ins&gt;</code> é usada para marcar um <ins>trecho de texto que foi inserido</ins> em um documento,
+    geralmente exibido com um sublinhado. Essa tag é útil para indicar acréscimos ou revisões em conteúdos.
+</p>
+<p>
+    Já a tag <code>&lt;del&gt;</code> indica que um <del>trecho de texto foi removido</del>, normalmente exibido com
+    um risco sobre as palavras. Essa marcação é bastante usada em revisões, edições de texto e sistemas de
+    versionamento.
+</p>
+<div class="html">
+    <code><pre>&lt;p&gt;Este é um texto com &lt;ins&gt;informação adicionada&lt;/ins&gt; e uma &lt;del&gt;parte removida&lt;/del&gt;.&lt;/p&gt;</pre></code>
+</div>
+<div class="browser">
+    <p>Este é um texto com <ins>informação adicionada</ins> e uma <del>parte removida</del>.</p>
+</div>
+<!-- Superscript and subscript -->
+<h2>Sobrescrito e subscrito: &lt;sup&gt; e &lt;sub&gt;</h2>
+<p>
+    A tag <code>&lt;sup&gt;</code> é usada para exibir um texto em <sup>sobrescrito</sup>, ou seja, levemente acima da
+    linha base.
+    É bastante utilizada em expressões matemáticas (como expoentes) e em notas de rodapé.
+</p>
+<p>
+    Já a tag <code>&lt;sub&gt;</code> posiciona o texto em <sub>subscrito</sub>, ou seja, um pouco abaixo da linha base.
+    Seu uso é comum em fórmulas químicas e em anotações técnicas.
+</p>
+<div class="html">
+    <code><pre>&lt;p&gt;Exemplo de sobrescrito: 2&lt;sup&gt;10&lt;/sup&gt; = 1024&lt;/p&gt;
+&lt;p&gt;Exemplo de subscrito: H&lt;sub&gt;2&lt;/sub&gt;O é água&lt;/p&gt;</pre></code>
+</div>
+<div class="browser">
+    <p>Exemplo de sobrescrito: 2<sup>10</sup> = 1024</p>
+    <p>Exemplo de subscrito: H<sub>2</sub>O é água</p>
+</div>
+
+<!-- Break Row -->
 <h2>Quebra de linha: &lt;br&gt;</h2>
 <p>Para inserir uma quebra de linha dentro de um parágrafo ou bloco de texto, utilizamos a tag <code>&lt;br&gt;</code>.
     Essa tag é <em>self-closing</em>, ou seja, não possui tag de fechamento.</p>
@@ -75,7 +113,7 @@
 <div class="browser">
     <p>Primeira linha.<br>Segunda linha após a quebra.</p>
 </div>
-
+<!-- Horizontal Rule -->
 <h2>Linha horizontal: &lt;hr&gt;</h2>
 <p>A tag <code>&lt;hr&gt;</code> insere uma linha horizontal, geralmente usada para separar seções de conteúdo. Assim
     como <code>&lt;br&gt;</code>, também é uma tag <em>self-closing</em>.</p>
@@ -89,7 +127,7 @@
     <hr>
     <p>Seção 2</p>
 </div>
-
+<!-- Hierarchy -->
 <h2>Importância da hierarquia de títulos</h2>
 <p>Manter uma hierarquia correta (apenas um <code>&lt;h1&gt;</code> por página, seguido de <code>&lt;h2&gt;</code>,
     <code>&lt;h3&gt;</code> e assim por diante) melhora a acessibilidade para pessoas que usam leitores de tela, pois
