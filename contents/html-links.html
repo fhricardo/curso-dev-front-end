@@ -1,1 +1,155 @@
 <h1>Links e Navegação</h1>
+<h2>A tag anchor &lt;a&gt;</h2>
+<p>
+    A tag <code>&lt;a&gt;</code> é usada para criar links, permitindo a navegação entre páginas ou para diferentes
+    partes de um mesmo documento.
+    É um dos elementos mais importantes da web, pois conecta conteúdos e transforma páginas isoladas em uma rede
+    interligada.
+</p>
+<p>
+    O atributo mais comum é o <code>href</code>, que define o destino do link. Esse destino pode ser uma URL externa,
+    uma página interna do mesmo site ou até mesmo um ponto específico dentro da mesma página.
+</p>
+<p>
+    Além disso, podemos usar o atributo <code>target</code> para controlar como o link será aberto.
+    Por exemplo: <code>_self</code> abre na mesma aba (padrão) e <code>_blank</code> abre em uma nova aba do navegador.
+</p>
+
+<div class="html">
+    <code><pre>&lt;p&gt;Visite a &lt;a href="https://fhricardo.github.io/curso-dev-front-end/"&gt;Apostila Digital&lt;/a&gt; para saber mais.&lt;/p&gt;
+
+&lt;p&gt;Abra em uma nova aba: 
+&lt;a href="https://fhricardo.github.io/curso-dev-front-end/" target="_blank"&gt;clique aqui para abrir em uma nova guia (aba)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Link interno para outra página: 
+&lt;a href="css.html"&gt;CSS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Link para uma seção da mesma página: 
+&lt;a href="#sobre"&gt;Ir para a seção Sobre&lt;/a&gt;&lt;/p&gt;</pre></code>
+</div>
+
+<div class="browser">
+    <p>Visite o <a href="https://www.exemplo.com">meu site</a> para saber mais.</p>
+    <p>Abra em uma nova aba: <a href="https://www.exemplo.com" target="_blank">clique aqui</a></p>
+    <p>Link interno para outra página: <a href="contato.html">Página de Contato</a></p>
+    <p>Link para uma seção da mesma página: <a href="#nav">Ir para a seção Barras de Navegação</a></p>
+</div>
+<h2 id="nav">Barras de Navegação</h2>
+<p>
+    Em HTML, uma barra de navegação é geralmente criada usando a tag <code>&lt;nav&gt;</code>,
+    que representa uma seção da página destinada a links de navegação. Dentro dela,
+    utilizamos uma lista não ordenada (<code>&lt;ul&gt;</code>) para organizar os itens,
+    e cada item da lista contém um link (<code>&lt;a&gt;</code>).
+</p>
+<p>
+    Mesmo sem CSS, essa estrutura já é compreensível por navegadores,
+    mecanismos de busca e leitores de tela, garantindo acessibilidade e semântica adequada.
+</p>
+
+<div class="html">
+    <code><pre>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Início&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sobre.html"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="servicos.html"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contato.html"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre></code>
+</div>
+
+<div class="browser">
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+</div>
+
+<h2>Barras de Navegação em uma Página</h2>
+<p>
+    Não existe um limite fixo para a quantidade de barras de navegação em uma página,
+    mas é importante manter a organização e a clareza para que o usuário não se perca.
+    Normalmente, encontramos de 1 a 3 tipos de navegação em um site, dependendo da complexidade do conteúdo.
+</p>
+
+<h3>Tipos mais comuns de navegação</h3>
+
+<h4>1. Navegação Principal (ou Global)</h4>
+<p>
+    É a barra principal do site, geralmente localizada no topo do cabeçalho.
+    Nela ficam os links mais importantes, como: Início, Sobre, Serviços e Contato.
+</p>
+<div class="html"><code><pre>&lt;header&gt;
+    &lt;nav class="principal"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header>
+</pre></code>
+
+</div>
+<div class="browser">
+    <header style="background:#f1f1f1;padding:10px;">
+        <nav>
+            <a href="#">Início</a> |
+            <a href="#">Sobre</a> |
+            <a href="#">Serviços</a> |
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+</div>
+
+<h4>2. Navegação Secundária</h4>
+<p>
+    Fica abaixo ou ao lado da navegação principal e mostra subcategorias ou conteúdos relacionados.
+</p>
+<div class="html"><code><pre>&lt;nav class="secundaria"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Masculino&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Feminino&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Infantil&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</pre></code>
+
+</div>
+<div class="browser">
+    <nav style="background:#e3e3e3;padding:8px;">
+        <a href="#">Masculino</a> |
+        <a href="#">Feminino</a> |
+        <a href="#">Infantil</a>
+    </nav>
+</div>
+
+<h4>3. Navegação de Rodapé</h4>
+<p>
+    Localizada no final da página, geralmente repete os links principais e inclui links extras como
+    Política de Privacidade e Termos de Uso.
+</p>
+<div class="html"><code><pre>
+&lt;footer&gt;
+    &lt;nav class="rodape"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Início &lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt; Política de Privacidade &lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt; Termos de Uso&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/footer&gt;
+</pre></code>
+
+</div>
+<div class="browser">
+    <footer style="background:#ddd;padding:10px;">
+        <a href="#">Início</a> |
+        <a href="#">Política de Privacidade</a> |
+        <a href="#">Termos de Uso</a>
+    </footer>
+</div>
