@@ -1,0 +1,94 @@
+<h1>Imagens em HTML</h1>
+<p>
+    Em HTML, imagens são usadas para ilustrar conteúdos, explicar ideias e deixar a página mais atrativa.
+    Para inserir imagens utilizamos a tag <code>&lt;img&gt;</code>, que é <strong>autofechante</strong> (não possui
+    tag de fechamento). Os atributos essenciais são: <code>src</code> (fonte da imagem) e <code>alt</code>
+    (descrição textual para acessibilidade e fallback).
+</p>
+
+<h2>Estrutura Básica da Imagem (&lt;img&gt;)</h2>
+<p>
+    A forma mais simples de inserir uma imagem é informando o <code>src</code> com o caminho do arquivo
+    e o <code>alt</code> com uma descrição curta e objetiva do que ela mostra.
+</p>
+<div class="html">
+    <code><pre>&lt;img src="viralata-caramelo.webp" alt="Um vira-lata caramelo deitado no pátio"&gt;</pre></code>
+</div>
+<div class="browser">
+    <img src="contents/assets/viralata-caramelo.webp" alt="Um vira-lata caramelo deitado no pátio">
+</div>
+
+<h2>Imagens Locais e Externas</h2>
+<p>
+    Você pode usar imagens salvas no seu projeto (caminho <em>relativo</em>) ou imagens hospedadas na web
+    (caminho <em>absoluto</em> com URL). Lembre-se de manter nomes de arquivos coerentes e pastas organizadas.
+</p>
+<div class="html">
+    <code><pre>&lt;!-- Imagem local, dentro da pasta do projeto --&gt;
+&lt;img src="assets/gatinho.webp" alt="Gatinho deitado olhando para a câmera"&gt;
+
+&lt;!-- Imagem externa, hospedada em outro servidor --&gt;
+&lt;img src="https://stock.adobe.com/gatinho-deitado.webp" alt=Gatinho deitado"&gt;</pre></code>
+
+</div>
+<div class="browser">
+    <img src="contents/assets/gatinho.webp" alt="Gatinho deitado olhando para a câmera">
+    <img src="contents/assets/gatinho.webp" alt="Gatinho deitado">
+</div>
+<p><strong>Importante!</strong><br>Quando utilizamos imagens externas em nossos projetos, devemos lembrar que a correta
+    exibição das imagens em nosso site depende do perfeito funcionamento do site onde as imagens estão hospedadas e,
+    caso haja alguma indisponibilidades por parte do site que hospeda as imagens, elas não serão exibidas em nosso site.
+</p>
+<h2>Tamanho da Imagem (width e height)</h2>
+<p>
+    Os atributos <code>width</code> e <code>height</code> redimensionam a imagem.
+    Informe apenas um deles para manter a proporção automaticamente. Se informar ambos com valores que
+    não correspondem à proporção original, a imagem pode <em>distorcer</em>.
+</p>
+<div class="html">
+    <code><pre>&lt;!-- Largura fixa, altura proporcional --&gt;
+&lt;img src="gato.jpg" alt="Gato tigrado" width="300"&gt;
+
+&lt;!-- Largura e altura definidas (cuidado com distorções) --&gt;
+&lt;img src="gato.jpg" alt="Gato tigrado" width="300" height="200"&gt;</pre></code>
+
+</div>
+<div class="browser">
+    <img src="contents/assets/gato-tigrado.webp" alt="Gato tigrado" width="300">
+    <img src="contents/assets/gato-tigrado.webp" alt="Gato tigrado" width="300" height="200">
+</div>
+
+<h2>Título da Imagem (title)</h2>
+<p>
+    O atributo <code>title</code> adiciona uma dica visual (tooltip) ao passar o mouse sobre a imagem.
+    Ele <strong>não</strong> substitui o <code>alt</code>, que é obrigatório para acessibilidade.
+</p>
+<div class="html">
+    <code><pre>&lt;img src="camera.png" alt="Ícone de câmera fotográfica" title="Clique para ver a galeria"&gt;</pre></code>
+</div>
+<div class="browser">
+    <img src="contents/assets/camera.svg" width="240" alt="Ícone de câmera (exemplo)" title="Clique para ver a galeria">
+</div>
+<h2>Quando a Imagem Não Carrega</h2>
+<p>
+    Se o arquivo não existir ou a conexão falhar, o navegador tenta exibir o <code>alt</code>.
+    Por isso, mantenha esse texto sempre descritivo e útil.
+</p>
+<div class="html">
+    <code><pre>&lt;!-- Caminho propositalmente incorreto para demonstrar o alt --&gt;
+&lt;img src="nao-existe/foto.png" alt="Retrato de uma pessoa sorrindo"&gt;</pre></code>
+</div>
+<div class="browser">
+    <img src="nao-existe/foto.png" alt="Retrato de uma pessoa sorrindo">
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Use <code>&lt;img&gt;</code> para inserir imagens na página. <br>
+    - Defina <code>src</code> (caminho da imagem) e <code>alt</code> (descrição acessível). <br>
+    - Redimensione com <code>width</code> e/ou <code>height</code> (evite distorções). <br>
+    - Use <code>title</code> para dica ao passar o mouse (opcional). <br>
+    - Para responsividade simples, utilize <code>width="100%"</code> no <code>&lt;img&gt;</code> dentro de um contêiner.
+    <br>
+    - Prefira imagens otimizadas em formatos adequados (JPG, PNG, GIF, SVG, WebP) e nomes de arquivos claros.
+</p>

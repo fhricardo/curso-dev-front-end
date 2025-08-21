@@ -1,1 +1,204 @@
-<h1>Tabelas</h1>
+<h1>Tabelas em HTML</h1>
+<p>
+    Em HTML, tabelas são usadas para organizar dados em linhas e colunas.
+    Elas são ideais para exibir informações tabulares, como horários, preços,
+    estatísticas ou qualquer dado que precise de comparação organizada.
+    Uma tabela é composta principalmente por três partes:
+    <strong>cabeçalho</strong>, <strong>linhas</strong> e <strong>células</strong>.
+</p>
+
+<h2>Estrutura Básica de uma Tabela (&lt;table&gt;)</h2>
+<p>
+    A estrutura básica de uma tabela utiliza a tag <code>&lt;table&gt;</code>.
+    Dentro dela, cada linha é definida com <code>&lt;tr&gt;</code> (table row),
+    e cada célula da linha pode ser um <code>&lt;td&gt;</code> (table data).
+</p>
+<div class="html">
+    <code><pre>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Linha 1, Coluna 1&lt;/td&gt;
+        &lt;td&gt;Linha 1, Coluna 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Linha 2, Coluna 1&lt;/td&gt;
+        &lt;td&gt;Linha 2, Coluna 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre></code>
+</div>
+<div class="browser">
+    <table border="1">
+        <tr>
+            <td>Linha 1, Coluna 1</td>
+            <td>Linha 1, Coluna 2</td>
+        </tr>
+        <tr>
+            <td>Linha 2, Coluna 1</td>
+            <td>Linha 2, Coluna 2</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Cabeçalho da Tabela (&lt;th&gt;)</h2>
+<p>
+    Para destacar o título de uma coluna ou linha, utilizamos a tag <code>&lt;th&gt;</code>
+    em vez de <code>&lt;td&gt;</code>.
+    O conteúdo de <code>&lt;th&gt;</code> aparece em <em>negrito</em> e centralizado por padrão.
+</p>
+<div class="html">
+    <code><pre>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Produto&lt;/th&gt;
+        &lt;th&gt;Preço&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Notebook&lt;/td&gt;
+        &lt;td&gt;R$ 3.500&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Mouse&lt;/td&gt;
+        &lt;td&gt;R$ 80&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre></code>
+</div>
+<div class="browser">
+    <table border="1">
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>R$ 3.500</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>R$ 80</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Mesclando Células (&lt;rowspan&gt; e &lt;colspan&gt;)</h2>
+<p>
+    Para unir células horizontalmente, usamos o atributo <code>colspan</code>.
+    Para unir verticalmente, usamos o <code>rowspan</code>.
+</p>
+<div class="html">
+    <code><pre>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nome&lt;/th&gt;
+        &lt;th colspan="2"&gt;Contatos&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ana&lt;/td&gt;
+        &lt;td&gt;Email&lt;/td&gt;
+        &lt;td&gt;Telefone&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre></code>
+</div>
+<div class="browser">
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th colspan="2">Contatos</th>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>Email</td>
+            <td>Telefone</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Use <code>&lt;table&gt;</code> para criar uma tabela. <br>
+    - Use <code>&lt;tr&gt;</code> para definir uma linha. <br>
+    - Use <code>&lt;td&gt;</code> para células de dados. <br>
+    - Use <code>&lt;th&gt;</code> para cabeçalhos. <br>
+    - Use <code>colspan</code> e <code>rowspan</code> para unir células.
+</p>
+<h2>Estrutura Avançada (&lt;thead&gt;, &lt;tbody&gt; e &lt;tfoot&gt;)</h2>
+<p>
+    Para organizar melhor a tabela, podemos separar o conteúdo em três partes:
+</p>
+<ul>
+    <li><strong>&lt;thead&gt;</strong> → usado para o <em>cabeçalho</em> da tabela.</li>
+    <li><strong>&lt;tbody&gt;</strong> → usado para o <em>conteúdo principal</em> da tabela.</li>
+    <li><strong>&lt;tfoot&gt;</strong> → usado para o <em>rodapé</em>, geralmente com totais ou observações.</li>
+</ul>
+<p>
+    Essa estrutura é especialmente útil para tabelas grandes, pois ajuda na semântica,
+    acessibilidade e até na impressão de documentos.
+</p>
+
+<div class="html">
+    <code><pre>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Produto&lt;/th&gt;
+            &lt;th&gt;Quantidade&lt;/th&gt;
+            &lt;th&gt;Preço&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Notebook&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;R$ 7.000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;R$ 240&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;Total&lt;/td&gt;
+            &lt;td&gt;R$ 7.240&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre></code>
+</div>
+
+<div class="browser">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Notebook</td>
+                <td>2</td>
+                <td>R$ 7.000</td>
+            </tr>
+            <tr>
+                <td>Mouse</td>
+                <td>3</td>
+                <td>R$ 240</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td>R$ 7.240</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<h2>Considerações finais</h2>
+<p>
+    - Use <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code> e <code>&lt;th&gt;</code> para a
+    estrutura básica. <br>
+    - Use <code>colspan</code> e <code>rowspan</code> para mesclar células. <br>
+    - Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;tfoot&gt;</code> para tabelas grandes e bem
+    organizadas. <br>
+    - Evite usar tabelas para layout. Hoje, elas devem ser usadas apenas para dados tabulares.
+</p>

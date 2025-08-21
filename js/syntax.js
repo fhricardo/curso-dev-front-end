@@ -1,17 +1,17 @@
 function applySyntax() {
-    let itemsCSS = document.getElementsByClassName('css')
-    let itemsHTML = document.getElementsByClassName('html')
-    let itemsJS = document.getElementsByClassName('js')
+    let itemsCSS = document.getElementsByClassName('css');
+    let itemsHTML = document.getElementsByClassName('html');
+    let itemsJS = document.getElementsByClassName('js');
     let itemsPHP = document.getElementsByClassName('php');
 
     for (let i = 0; i < itemsCSS.length; i++) {
-        w3CodeColor(itemsCSS[i], 'css')
+        w3CodeColor(itemsCSS[i], 'css');
     }
     for (let i = 0; i < itemsHTML.length; i++) {
-        w3CodeColor(itemsHTML[i], 'html')
+        w3CodeColor(itemsHTML[i], 'html');
     }
     for (let i = 0; i < itemsJS.length; i++) {
-        w3CodeColor(itemsJS[i], 'js')
+        w3CodeColor(itemsJS[i], 'js');
     }
     for (let i = 0; i < itemsPHP.length; i++) {
         w3CodeColor(itemsPHP[i], 'php');
@@ -46,6 +46,7 @@ function w3CodeColor(elmnt, mode) {
     if (lang == "css") { elmntTxt = cssMode(elmntTxt); }
     if (lang == "js") { elmntTxt = jsMode(elmntTxt); }
     if (lang == "php") { elmntTxt = phpMode(elmntTxt); }
+    if (lang == "conf") { elmntTxt = confMode(elmntTxt); }
 
     elmntObj.innerHTML = elmntTxt;
 
@@ -433,5 +434,4 @@ function w3CodeColor(elmnt, mode) {
         });
         return rest;
     }
-
 }
