@@ -89,6 +89,7 @@
     Para unir células horizontalmente, usamos o atributo <code>colspan</code>.
     Para unir verticalmente, usamos o <code>rowspan</code>.
 </p>
+<h3>Exemplo de uso do atributo colspan</h3>
 <div class="html">
     <code><pre>&lt;table&gt;
     &lt;tr&gt;
@@ -115,7 +116,45 @@
         </tr>
     </table>
 </div>
-
+<h3>Exemplo de uso do atributo rowspan</h3>
+<div class="html">
+    <code>
+        <pre>&lt;table  border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Produto&lt;/th&gt;
+        &lt;th&gt;Descrição&lt;/th&gt;
+        &lt;th&gt;Preço&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Cadeira&lt;/td&gt;
+        &lt;td&gt;Em aço com pintura eletrostática&lt;/td&gt;
+        &lt;td&gt;R$ 100,00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Em madeira maciça envernizada&lt;/td&gt;
+        &lt;td&gt;R$ 150,00&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+    </code>
+</div>
+<div class="browser">
+    <table border="1">
+        <tr>
+            <th>Produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Cadeira</td>
+            <td>Em aço com pintura eletrostática</td>
+            <td>R$ 100,00</td>
+        </tr>
+        <tr>
+            <td>Em madeira maciça envernizada</td>
+            <td>R$ 150,00</td>
+        </tr>
+    </table>
+</div>
 <h2>Resumo</h2>
 <p>
     - Use <code>&lt;table&gt;</code> para criar uma tabela. <br>
