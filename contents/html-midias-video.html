@@ -1,0 +1,168 @@
+<h1>Mídias em HTML: Vídeo</h1>
+<p>
+    Em HTML, assim como <strong>áudio</strong>, a tag <strong>vídeo</strong> é utilizada para enriquecer o conteúdo da
+    página, deixando-a mais interativa e envolvente.
+</p>
+<h2>Vídeo em HTML (&lt;video&gt;)</h2>
+<p>
+    Para inserir vídeos, usamos a tag <code>&lt;video&gt;</code>.
+    Assim como no áudio, o atributo <code>controls</code> é usado para exibir os controles de reprodução.
+    Podemos definir largura (<code>width</code>) e altura (<code>height</code>) ou deixá-los responsivos com CSS.
+</p>
+<div class="html">
+    <code><pre>&lt;video src="video.mp4" width="400" controls&gt;&lt;/video&gt;</pre></code>
+</div>
+<div class="browser">
+    <video src="contents/video/video.mp4" width="400" controls></video>
+</div>
+
+<h2>Formatos de Vídeo</h2>
+<p>
+    Na web, o <strong>formato de vídeo</strong> escolhido impacta diretamente a
+    <em>qualidade visual</em>, o <em>tamanho do arquivo</em>, a <em>velocidade de carregamento</em>
+    e a <em>compatibilidade entre navegadores</em>. Os mais comuns são MP4 (H.264), WebM e OGG (Theora).
+</p>
+<h3>MP4 (H.264)</h3>
+<p><strong>História:</strong> criado no início dos anos 2000 pelo <em>MPEG</em> como parte do padrão
+    <em>MPEG-4 Part 14</em>, o MP4 tornou-se o formato de vídeo mais popular e compatível da web e dispositivos.
+</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Compatibilidade quase universal em navegadores, sistemas e players.</li>
+    <li>Boa compressão com qualidade aceitável (codec H.264).</li>
+    <li>Suporta legendas embutidas e múltiplas faixas de áudio.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Formato patenteado (licenciamento envolvido no uso de H.264).</li>
+    <li>Arquivos maiores que formatos mais modernos como WebM (VP9) ou AV1.</li>
+</ul>
+<p><strong>Quando usar:</strong> vídeos para máxima <strong>compatibilidade</strong> em navegadores e dispositivos.</p>
+
+<h3>WebM</h3>
+<p><strong>História:</strong> lançado em 2010 pelo Google como alternativa aberta ao MP4, utiliza
+    <em>codecs VP8/VP9</em> (e mais recentemente AV1) para compressão de vídeo.
+</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Formato aberto e livre de patentes.</li>
+    <li>Arquivos menores que MP4 em resoluções equivalentes (melhor compressão).</li>
+    <li>Suporte nativo em navegadores modernos (Chrome, Firefox, Edge, Opera).</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Compatibilidade limitada em navegadores/sistemas mais antigos (especialmente Safari e iOS mais antigos).</li>
+    <li>Conversão pode exigir mais processamento.</li>
+</ul>
+<p><strong>Quando usar:</strong> projetos modernos na web que priorizam <strong>abertura</strong> e
+    <strong>eficiência</strong>.
+</p>
+
+<h3>OGG (Theora)</h3>
+<p><strong>História:</strong> criado pela <em>Xiph.Org Foundation</em> como formato aberto para vídeo, utiliza o
+    codec <em>Theora</em>. Foi um dos primeiros formatos suportados em navegadores via <code>&lt;video&gt;</code> do
+    HTML5.</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Aberto e livre de patentes.</li>
+    <li>Suporte básico nos principais navegadores.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Qualidade e compressão inferiores comparadas ao MP4 (H.264) e WebM.</li>
+    <li>Menos usado atualmente; tendência de substituição por WebM.</li>
+</ul>
+<p><strong>Quando usar:</strong> apenas em casos específicos de compatibilidade ou projetos que exigem 100% de software
+    livre.</p>
+
+<h3>Qual usar em cada situação?</h3>
+<ul>
+    <li><strong>Compatibilidade universal:</strong> MP4 (H.264).</li>
+    <li><strong>Eficiência e modernidade:</strong> WebM (VP9/AV1).</li>
+    <li><strong>Software livre e aberto:</strong> OGG (Theora) — embora hoje pouco utilizado.</li>
+    <li><strong>Boas práticas na web:</strong> usar <code>&lt;video&gt;</code> com múltiplas fontes (MP4 + WebM)
+        garante o maior alcance.</li>
+</ul>
+<h2>Compatibilidade</h2>
+
+<p>Com o intuito de melhorar a compatibilidade dos vídeos em nossos sites com a maioria dos navegadores, a tag
+    <code>video</code> permite a inclusão de diversos arquivos, fazendo com que o navegador carregue aquele para o qual
+    possui compatibilidade.
+</p>
+
+<div class="html">
+    <code><pre>&lt;video controls width="400"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;source src="video.ogv" type="video/ogg"&gt;
+    Seu navegador não suporta vídeo.
+&lt;/video&gt;</pre></code>
+</div>
+<div class="browser">
+    <video controls width="400">
+        <source src="contents/video/video.mp4" type="video/mp4">
+        <source src="contents/video/video.webm" type="video/webm">
+        <source src="contents/video/video.ogv" type="video/ogg">
+        Seu navegador não suporta vídeo.
+    </video>
+</div>
+
+<h2>Atributos</h2>
+<p>
+    A tag <code>&lt;video&gt;</code> possui atributos que, além de facilitar a interatividade do usuário, também
+    possibilitam melho estética na exibição dos vídeos:
+</p>
+<ul>
+    <li><code>controls</code> – exibe os controles de reprodução.</li>
+    <li><code>autoplay</code> – inicia a reprodução automaticamente<sup>1</sup></li>
+    <li><code>loop</code> – faz a mídia reiniciar automaticamente ao terminar.</li>
+    <li><code>muted</code> – inicia o áudio/vídeo sem som<sup>2</sup></li>
+    <li><code>poster</code> - define uma imagem de capa antes da reprodução começar.</li>
+</ul>
+<div class="html">
+    <code><pre>&lt;video width="400" controls poster="assets/capa.webp"&gt;
+    &lt;source src="videos/video.mp4" type="video/mp4"&gt; 
+&lt;/video&gt;</pre></code>
+</div>
+<div class="browser">
+    <video width="400" poster="contents/assets/capa.webp" controls>
+        <source src="contents/video/video.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="obs">
+    <p><strong>1</strong> - Alguns navegadores não oferecem suporte ao autoplay, impedindo a reprodução automatica do
+        conteúdo.</p>
+    <p><strong>2</strong> - Em alguns navegadores, é possível utilizar o atributo <code>muted</code> em conjunto com o
+        atributo <code>autoplay</code> para iniciar a reprodução do conteúdo automaticamente, sem reproduzir seu áudio.
+    </p>
+
+</div>
+<h2>Quando a Mídia Não Carrega</h2>
+<p>
+    Caso o arquivo não exista ou o navegador não suporte o formato, o conteúdo alternativo dentro da tag será exibido.
+</p>
+<div class="html">
+    <code><pre>&lt;video src="nao-existe.mp4" controls&gt;
+    Seu navegador não conseguiu carregar o áudio.
+&lt;/video&gt;</pre></code>
+</div>
+<div class="browser">
+    <video controls>
+        <source src="nao-existe.mp4" type="video/mp4">
+        <source src="nao-existe.webm" type="video/webm">
+        Seu navegador não conseguiu carregar o vídeo.
+    </video>
+</div>
+<div class="obs">
+    <p>O fallback (mensagem de erro) só é retornado caso o navegador não consiga decodificar o arquivo de vídeo. Caso
+        ele não exista, o navegador vai, ainda assim, carregar um player desativado.</p>
+</div>
+<h2>Resumo</h2>
+<p>
+    - Use <code>&lt;video&gt;</code> para inserir videos em uma página. <br>
+    - Sempre utilize <code>controls</code> para permitir interação do usuário. <br>
+    - Forneça múltiplos formatos para garantir compatibilidade entre navegadores. <br>
+    - Utilize atributos como <code>autoplay</code>, <code>loop</code> e <code>muted</code> com moderação. <br>
+    - Use <code>poster</code> como capa inicial. <br>
+    - Sempre inclua um conteúdo alternativo para navegadores que não suportam a mídia. <br>
+</p>
