@@ -81,6 +81,127 @@
 <div class="browser">
     <img src="nao-existe/foto.png" alt="Retrato de uma pessoa sorrindo">
 </div>
+<h2>Formatos de Imagens</h2>
+<p>Os arquivos de imagens são importantes recursos para nossas páginas da web, entretanto, não são todos os formatos de
+    arquivo que têm suporte para web no navegadores atuais.</p>
+<p>
+    Na web e no design, escolher o formato certo impacta <strong>qualidade</strong>, <strong>tamanho do
+        arquivo</strong>,
+    <strong>compatibilidade</strong> e recursos como <em>transparência</em> e <em>animação</em>.
+</p>
+<p>Abaixo, apresentamos uma relação dos principais tipos de arquivos de imagens:</p>
+<h3>JPG (JPEG)</h3>
+<p><strong>História:</strong> criado em 1992 pelo <em>Joint Photographic Experts Group</em>, popularizou-se para
+    fotografias digitais por oferecer alta compressão.</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Alta taxa de compressão com boa qualidade perceptiva.</li>
+    <li>Compatibilidade praticamente universal (web, apps, sistemas).</li>
+    <li>Ideal para fotos e imagens com muitos tons e gradientes.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Compressão <em>com perdas</em> (cada regravação pode degradar).</li>
+    <li>Sem suporte a transparência.</li>
+    <li>Não é ideal para textos, logos e gráficos chapados.</li>
+</ul>
+<p><strong>Quando usar:</strong> fotografias e banners fotográficos quando a compatibilidade é prioridade.</p>
+
+<h3>PNG</h3>
+<p><strong>História:</strong> lançado em 1996 como alternativa aberta ao GIF, focado em qualidade sem perdas e
+    transparência.</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Compressão <em>sem perdas</em>, preservando detalhes.</li>
+    <li>Suporta transparência real (canal alpha) e bordas suaves.</li>
+    <li>Ótimo para UI, ícones, logos e gráficos com áreas chapadas.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Arquivos maiores que JPG para fotos.</li>
+    <li>Menos eficiente para imagens fotográficas grandes.</li>
+</ul>
+<p><strong>Quando usar:</strong> elementos de interface, logotipos, prints e imagens que exijam transparência
+    nítida.</p>
+
+<h3>GIF</h3>
+<p><strong>História:</strong> de 1987 (CompuServe), tornou-se ícone da web por suportar animação em conexão lenta.
+</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Compatibilidade ampla em navegadores e mensageiros.</li>
+    <li>Animações simples em um único arquivo.</li>
+    <li>Bom para gráficos com paleta reduzida.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Limitado a 256 cores (ruim para fotos e gradientes).</li>
+    <li>Sem transparência parcial (apenas tudo ou nada).</li>
+    <li>Arquivos geralmente maiores que vídeos curtos/anim. modernas.</li>
+</ul>
+<p><strong>Quando usar:</strong> apenas por compatibilidade/nostalgia; prefira WebP animado ou vídeo (MP4/WebM) para
+    eficiência.</p>
+
+<h3>SVG</h3>
+<p><strong>História:</strong> padrão do W3C (1999) para gráficos vetoriais escaláveis e interativos.</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Escala infinita sem perda de qualidade (vetorial).</li>
+    <li>Arquivos leves, editáveis (XML), estilização via CSS.</li>
+    <li>Suporta interatividade e animações com CSS/JS.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Não serve para fotografias (raster).</li>
+    <li>SVGs complexos podem pesar/ser trabalhosos de renderizar.</li>
+    <li>Exige atenção a segurança (scripts embutidos quando externo).</li>
+</ul>
+<p><strong>Quando usar:</strong> logos, ícones, ilustrações, gráficos e mapas interativos.</p>
+
+<h3>WebP</h3>
+<p><strong>História:</strong> criado pelo Google (2010) para reduzir tamanho de imagens na web com boa qualidade.
+</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Compressão com e sem perdas; geralmente menor que JPG/PNG.</li>
+    <li>Suporta transparência e animação (substitui muitos GIFs).</li>
+    <li>Qualidade visual competitiva com tamanhos reduzidos.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Geração/decodificação pode ser mais pesada que JPG/PNG.</li>
+    <li>Compatibilidade antiga/legada ainda pode ser um obstáculo específico.</li>
+</ul>
+<p><strong>Quando usar:</strong> web moderna quando se busca melhor performance sem abrir mão de transparência/anim.
+</p>
+
+<h3>AVIF</h3>
+<p><strong>História:</strong> baseado no codec AV1 (2018); projetado para compressão de última geração.</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+    <li>Taxa de compressão superior (arquivos menores com alta qualidade).</li>
+    <li>Suporta HDR, transparência e animações.</li>
+    <li>Excelente para otimização de performance em sites e apps.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+    <li>Codificação/decodificação mais custosa (CPU).</li>
+    <li>Compatibilidade ainda não é universal em ferramentas/ambientes legados.</li>
+</ul>
+<p><strong>Quando usar:</strong> otimização máxima de imagens (especialmente fotos) em projetos modernos com suporte
+    adequado.</p>
+
+<h3>Qual usar em cada situação?</h3>
+<ul>
+    <li><strong>Fotos:</strong> AVIF (melhor), WebP (ótimo), JPG (compatibilidade universal).</li>
+    <li><strong>Logos/Ícones/Ilustrações:</strong> SVG (preferencial). PNG quando precisar raster com transparência.
+    </li>
+    <li><strong>Transparência:</strong> PNG (clássico), WebP/AVIF (modernos), SVG (vetor).</li>
+    <li><strong>Animação:</strong> WebP animado ou vídeo curto (MP4/WebM); GIF só por compatibilidade.</li>
+    <li><strong>Compatibilidade máxima sem surpresas:</strong> JPG/PNG/SVG.</li>
+    <li><strong>Performance web moderna:</strong> AVIF &gt; WebP &gt; JPG/PNG (como <em>fallback</em>).</li>
+</ul>
+
 
 <h2>Resumo</h2>
 <p>
