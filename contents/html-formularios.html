@@ -1,1 +1,168 @@
-<h1>Formulários</h1>
+<h1>Formulários em HTML</h1>
+<p>
+    Formulários em HTML permitem coletar informações dos usuários, como textos, escolhas, arquivos e muito mais.
+    Eles são criados com a tag <code>&lt;form&gt;</code> e podem conter diversos tipos de campos de entrada.
+    Através do formulário, os dados podem ser enviados para processamento em um servidor usando diferentes métodos de
+    envio.
+</p>
+
+<h2>Estrutura Básica do Formulário (&lt;form&gt;)</h2>
+<p>
+    A forma mais simples de criar um formulário é utilizar a tag <code>&lt;form&gt;</code> com os atributos
+    <code>action</code> (para onde os dados serão enviados) e <code>method</code> (forma de envio: <code>get</code> ou
+    <code>post</code>).
+</p>
+<div class="html">
+    <code><pre>&lt;form action="processa.php" method="post"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</pre></code>
+</div>
+<div class="browser">
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+<h2>Métodos de Envio (GET e POST)</h2>
+<p>
+    O atributo <code>method</code> define como os dados do formulário serão enviados:
+</p>
+<ul>
+    <li><strong>GET:</strong> os dados aparecem na URL (bom para buscas e formulários simples).</li>
+    <li><strong>POST:</strong> os dados são enviados de forma oculta no corpo da requisição (mais seguro e usado para
+        cadastros, logins etc.).</li>
+</ul>
+<div class="html">
+    <code><pre>&lt;!-- Exemplo usando GET --&gt;
+&lt;form action="busca.php" method="get"&gt;
+    &lt;input type="text" name="q" placeholder="Buscar..."&gt;
+    &lt;input type="submit" value="Pesquisar"&gt;
+&lt;/form&gt;
+
+&lt;!-- Exemplo usando POST --&gt;
+&lt;form action="cadastro.php" method="post"&gt;
+    &lt;input type="text" name="usuario" placeholder="Usuário"&gt;
+    &lt;input type="password" name="senha" placeholder="Senha"&gt;
+    &lt;input type="submit" value="Cadastrar"&gt;
+&lt;/form&gt;</pre></code>
+</div>
+
+<h2>Principais Tipos de Campos</h2>
+<p>
+    Dentro de um formulário podemos ter diversos tipos de campos, cada um com um propósito específico:
+</p>
+<ul>
+    <li><code>text</code> – campo de texto curto.</li>
+    <li><code>password</code> – campo para senhas (oculta os caracteres).</li>
+    <li><code>email</code> – valida formato de e-mail.</li>
+    <li><code>number</code> – permite apenas números.</li>
+    <li><code>date</code> – campo para selecionar datas.</li>
+    <li><code>radio</code> – seleção única em um grupo de opções.</li>
+    <li><code>checkbox</code> – seleção múltipla de opções.</li>
+    <li><code>file</code> – envio de arquivos.</li>
+    <li><code>textarea</code> – campo de texto longo (parágrafos).</li>
+    <li><code>select</code> – lista suspensa (dropdown).</li>
+</ul>
+<div class="html">
+    <code><pre>&lt;form action="#" method="post"&gt;
+    Nome: &lt;input type="text" name="nome"&gt;&lt;br&gt;
+    Senha: &lt;input type="password" name="senha"&gt;&lt;br&gt;
+    E-mail: &lt;input type="email" name="email"&gt;&lt;br&gt;
+    Idade: &lt;input type="number" name="idade"&gt;&lt;br&gt;
+    Data de Nascimento: &lt;input type="date" name="nascimento"&gt;&lt;br&gt;
+
+    Gênero:
+    &lt;input type="radio" name="genero" value="M"&gt; Masculino
+    &lt;input type="radio" name="genero" value="F"&gt; Feminino &lt;br&gt;
+
+    Interesses:
+    &lt;input type="checkbox" name="interesse" value="html"&gt; HTML
+    &lt;input type="checkbox" name="interesse" value="css"&gt; CSS
+    &lt;input type="checkbox" name="interesse" value="js"&gt; JavaScript &lt;br&gt;
+
+    Foto: &lt;input type="file" name="foto"&gt;&lt;br&gt;
+
+    Observações: &lt;br&gt;
+    &lt;textarea name="mensagem" rows="4" cols="40"&gt;&lt;/textarea&gt;&lt;br&gt;
+
+    Curso:
+    &lt;select name="curso"&gt;
+        &lt;option value="frontend"&gt;Front-End&lt;/option&gt;
+        &lt;option value="backend"&gt;Back-End&lt;/option&gt;
+        &lt;option value="design"&gt;Design&lt;/option&gt;
+    &lt;/select&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</pre></code>
+</div>
+<div class="browser">
+    <form action="#" method="post">
+        Nome: <input type="text" name="nome"><br>
+        Senha: <input type="password" name="senha"><br>
+        E-mail: <input type="email" name="email"><br>
+        Idade: <input type="number" name="idade"><br>
+        Data de Nascimento: <input type="date" name="nascimento"><br><br>
+
+        Gênero:
+        <input type="radio" name="genero" value="M"> Masculino
+        <input type="radio" name="genero" value="F"> Feminino <br><br>
+
+        Interesses:
+        <input type="checkbox" name="interesse" value="html"> HTML
+        <input type="checkbox" name="interesse" value="css"> CSS
+        <input type="checkbox" name="interesse" value="js"> JavaScript <br><br>
+
+        Foto: <input type="file" name="foto"><br><br>
+
+        Observações: <br>
+        <textarea name="mensagem" rows="4" cols="40"></textarea><br><br>
+
+        Curso:
+        <select name="curso">
+            <option value="frontend">Front-End</option>
+            <option value="backend">Back-End</option>
+            <option value="design">Design</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+<h2>Botões em Formulários</h2>
+<p>
+    Além de <code>&lt;input type="submit"&gt;</code>, podemos usar outros botões:
+</p>
+<ul>
+    <li><code>submit</code> – envia o formulário.</li>
+    <li><code>reset</code> – limpa todos os campos.</li>
+    <li><code>button</code> – botão genérico (pode ser usado com JavaScript).</li>
+</ul>
+<div class="html">
+    <code><pre>&lt;form action="#" method="post"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+    &lt;button type="button" onclick="alert('Olá!')"&gt;Clique Aqui&lt;/button&gt;
+&lt;/form&gt;</pre></code>
+</div>
+<div class="browser">
+    <form action="#" method="post">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+        <button type="button" onclick="alert('Olá!')">Clique Aqui</button>
+    </form>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Use <code>&lt;form&gt;</code> para criar formulários. <br>
+    - Defina <code>action</code> (para onde enviar) e <code>method</code> (<code>get</code> ou <code>post</code>). <br>
+    - Utilize diferentes tipos de campos de entrada (<code>text</code>, <code>password</code>, <code>email</code>,
+    <code>radio</code>, <code>checkbox</code>, <code>file</code>, <code>textarea</code>, <code>select</code>). <br>
+    - Lembre-se de usar <code>&lt;label&gt;</code> para melhorar a acessibilidade e experiência do usuário. <br>
+    - Use botões para enviar (<code>submit</code>), limpar (<code>reset</code>) ou acionar ações customizadas
+    (<code>button</code>). <br>
+</p>

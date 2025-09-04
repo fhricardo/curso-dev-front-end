@@ -822,6 +822,68 @@ input:checked+.slider::before {
     right: 0;
 }
 
+.downloads {
+    width: 100%;
+    background-color: azure;
+    border: 1px solid lightsteelblue;
+    padding: 2.5rem 1rem .5rem 1rem;
+    border-radius: .5rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    p {
+        width: 100%;
+        padding-left: 0rem !important;
+        margin: 0;
+        text-align: left;
+    }
+
+    &::before {
+        content: "\f019";
+        font: var(--fa-font-solid);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: .5rem .5rem 0 0;
+        width: 100%;
+        height: 2rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background-color: lightsteelblue;
+    }
+
+    &::after {
+        content: "Downloads";
+        position: absolute;
+        top: 0;
+        left: 2.5rem;
+        display: flex;
+        width: fit-content;
+        height: 2rem;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    a {
+        display: flex;
+        width: fit-content;
+        padding: 0.25rem .5rem;
+        border-radius: .5rem;
+        text-decoration: none;
+        color: var(--dark) !important;
+        background-color: lightsteelblue;
+
+        &:hover {
+            text-decoration: none !important;
+            color: var(--light) !important;
+            background-color: steelblue;
+        }
+    }
+}
 
 
 
