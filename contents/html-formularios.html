@@ -1,168 +1,309 @@
 <h1>Formulários em HTML</h1>
 <p>
-    Formulários em HTML permitem coletar informações dos usuários, como textos, escolhas, arquivos e muito mais.
-    Eles são criados com a tag <code>&lt;form&gt;</code> e podem conter diversos tipos de campos de entrada.
-    Através do formulário, os dados podem ser enviados para processamento em um servidor usando diferentes métodos de
-    envio.
+    Formulários permitem coletar informações dos usuários (texto, escolhas, arquivos, etc.).
+    A tag principal é <code>&lt;form&gt;</code>, que organiza os campos e define <code>action</code> (para onde os dados
+    vão)
+    e <code>method</code> (<code>get</code> ou <code>post</code>).
+    Importante: o formulário <em>coleta</em> os dados; para <strong>processar</strong> (salvar, enviar e-mail,
+    autenticar) você
+    normalmente precisa de um back-end (PHP, Node, Python, etc.).
 </p>
 
-<h2>Estrutura Básica do Formulário (&lt;form&gt;)</h2>
+<h2>Estrutura básica do formulário (&lt;form&gt;)</h2>
 <p>
-    A forma mais simples de criar um formulário é utilizar a tag <code>&lt;form&gt;</code> com os atributos
-    <code>action</code> (para onde os dados serão enviados) e <code>method</code> (forma de envio: <code>get</code> ou
-    <code>post</code>).
+    Os atributos essenciais do <code>&lt;form&gt;</code> são:
 </p>
+<ul>
+    <li><code>action</code> — destino (URL/arquivo) que receberá os dados.</li>
+    <li><code>method</code> — <code>get</code> ou <code>post</code>.</li>
+    <li><code>enctype</code> — necessário para upload de arquivos: <code>multipart/form-data</code>.</li>
+</ul>
 <div class="html">
-    <code><pre>&lt;form action="processa.php" method="post"&gt;
+    <code><pre>&lt;form action="processa.php" method="post" enctype="multipart/form-data"&gt;
     &lt;label for="nome"&gt;Nome:&lt;/label&gt;
     &lt;input type="text" id="nome" name="nome"&gt;
+
     &lt;input type="submit" value="Enviar"&gt;
 &lt;/form&gt;</pre></code>
 </div>
 <div class="browser">
-    <form action="#" method="post">
+    <form action="#" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome">
         <input type="submit" value="Enviar">
     </form>
 </div>
 
-<h2>Métodos de Envio (GET e POST)</h2>
+<h2>Métodos de envio: GET vs POST</h2>
 <p>
-    O atributo <code>method</code> define como os dados do formulário serão enviados:
+    Entenda as diferenças para escolher corretamente:
 </p>
 <ul>
-    <li><strong>GET:</strong> os dados aparecem na URL (bom para buscas e formulários simples).</li>
-    <li><strong>POST:</strong> os dados são enviados de forma oculta no corpo da requisição (mais seguro e usado para
-        cadastros, logins etc.).</li>
+    <li><strong>GET</strong> — envia dados na URL (ex.: <code>?q=termo</code>). Bom para buscas e filtros. Funciona só
+        com HTML (você vê os parâmetros na URL). Tem limite de tamanho e não é seguro para dados sensíveis.</li>
+    <li><strong>POST</strong> — envia dados no corpo da requisição. Uso recomendado para cadastros, logins e uploads.
+        Para proces­sar os dados recebidos via POST você precisa de back-end.</li>
 </ul>
 <div class="html">
-    <code><pre>&lt;!-- Exemplo usando GET --&gt;
-&lt;form action="busca.php" method="get"&gt;
-    &lt;input type="text" name="q" placeholder="Buscar..."&gt;
-    &lt;input type="submit" value="Pesquisar"&gt;
+    <code><pre>&lt;!-- Exemplo GET --&gt;
+&lt;form action="/buscar" method="get"&gt;
+  &lt;label for="q"&gt;Buscar:&lt;/label&gt;
+  &lt;input type="text" id="q" name="q"&gt;
+  &lt;input type="submit" value="Pesquisar"&gt;
 &lt;/form&gt;
 
-&lt;!-- Exemplo usando POST --&gt;
-&lt;form action="cadastro.php" method="post"&gt;
-    &lt;input type="text" name="usuario" placeholder="Usuário"&gt;
-    &lt;input type="password" name="senha" placeholder="Senha"&gt;
-    &lt;input type="submit" value="Cadastrar"&gt;
+&lt;!-- Exemplo POST (requere backend para processar) --&gt;
+&lt;form action="/cadastro" method="post"&gt;
+  &lt;label for="user"&gt;Usuário:&lt;/label&gt;
+  &lt;input type="text" id="user" name="user"&gt;
+  &lt;input type="submit" value="Cadastrar"&gt;
 &lt;/form&gt;</pre></code>
 </div>
 
-<h2>Principais Tipos de Campos</h2>
+<h2>Tipos de campos e exemplos práticos</h2>
 <p>
-    Dentro de um formulário podemos ter diversos tipos de campos, cada um com um propósito específico:
+    Cada tipo tem seu propósito — use o mais adequado para UX/validação:
 </p>
 <ul>
-    <li><code>text</code> – campo de texto curto.</li>
-    <li><code>password</code> – campo para senhas (oculta os caracteres).</li>
-    <li><code>email</code> – valida formato de e-mail.</li>
-    <li><code>number</code> – permite apenas números.</li>
-    <li><code>date</code> – campo para selecionar datas.</li>
-    <li><code>radio</code> – seleção única em um grupo de opções.</li>
-    <li><code>checkbox</code> – seleção múltipla de opções.</li>
-    <li><code>file</code> – envio de arquivos.</li>
-    <li><code>textarea</code> – campo de texto longo (parágrafos).</li>
-    <li><code>select</code> – lista suspensa (dropdown).</li>
+    <li><code>text</code>, <code>password</code>, <code>email</code>, <code>tel</code>, <code>url</code></li>
+    <li><code>number</code>, <code>range</code></li>
+    <li><code>date</code>, <code>time</code>, <code>datetime-local</code></li>
+    <li><code>radio</code> (escolha única) e <code>checkbox</code> (múltipla)</li>
+    <li><code>file</code> (upload — require <code>enctype</code>)</li>
+    <li><code>textarea</code> (texto longo) e <code>select</code> (dropdown)</li>
 </ul>
+
 <div class="html">
-    <code><pre>&lt;form action="#" method="post"&gt;
-    Nome: &lt;input type="text" name="nome"&gt;&lt;br&gt;
-    Senha: &lt;input type="password" name="senha"&gt;&lt;br&gt;
-    E-mail: &lt;input type="email" name="email"&gt;&lt;br&gt;
-    Idade: &lt;input type="number" name="idade"&gt;&lt;br&gt;
-    Data de Nascimento: &lt;input type="date" name="nascimento"&gt;&lt;br&gt;
+    <code><pre>&lt;form action="#" method="post" enctype="multipart/form-data"&gt;
 
-    Gênero:
-    &lt;input type="radio" name="genero" value="M"&gt; Masculino
-    &lt;input type="radio" name="genero" value="F"&gt; Feminino &lt;br&gt;
+  &lt;!-- texto, senha e email --&gt;
+  &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+  &lt;input type="text" id="nome" name="nome" maxlength="100" size="30"&gt;
 
-    Interesses:
-    &lt;input type="checkbox" name="interesse" value="html"&gt; HTML
-    &lt;input type="checkbox" name="interesse" value="css"&gt; CSS
-    &lt;input type="checkbox" name="interesse" value="js"&gt; JavaScript &lt;br&gt;
+  &lt;label for="senha"&gt;Senha:&lt;/label&gt;
+  &lt;input type="password" id="senha" name="senha" maxlength="30"&gt;
 
-    Foto: &lt;input type="file" name="foto"&gt;&lt;br&gt;
+  &lt;label for="email"&gt;E-mail:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
 
-    Observações: &lt;br&gt;
-    &lt;textarea name="mensagem" rows="4" cols="40"&gt;&lt;/textarea&gt;&lt;br&gt;
+  &lt;!-- number e date --&gt;
+  &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+  &lt;input type="number" id="idade" name="idade" min="0" max="120"&gt;
 
-    Curso:
-    &lt;select name="curso"&gt;
-        &lt;option value="frontend"&gt;Front-End&lt;/option&gt;
-        &lt;option value="backend"&gt;Back-End&lt;/option&gt;
-        &lt;option value="design"&gt;Design&lt;/option&gt;
-    &lt;/select&gt;&lt;br&gt;
+  &lt;label for="nasc"&gt;Nascimento:&lt;/label&gt;
+  &lt;input type="date" id="nasc" name="nasc"&gt;
 
-    &lt;input type="submit" value="Enviar"&gt;
+  &lt;!-- file (upload) --&gt;
+  &lt;label for="foto"&gt;Foto:&lt;/label&gt;
+  &lt;input type="file" id="foto" name="foto"&gt;
+
+  &lt;!-- textarea --&gt;
+  &lt;label for="msg"&gt;Mensagem:&lt;/label&gt;
+  &lt;textarea id="msg" name="msg" rows="4" cols="40"&gt;&lt;/textarea&gt;
+
+  &lt;input type="submit" value="Enviar"&gt;
 &lt;/form&gt;</pre></code>
 </div>
+
 <div class="browser">
-    <form action="#" method="post">
-        Nome: <input type="text" name="nome"><br>
-        Senha: <input type="password" name="senha"><br>
-        E-mail: <input type="email" name="email"><br>
-        Idade: <input type="number" name="idade"><br>
-        Data de Nascimento: <input type="date" name="nascimento"><br><br>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" maxlength="100" size="30"><br>
 
-        Gênero:
-        <input type="radio" name="genero" value="M"> Masculino
-        <input type="radio" name="genero" value="F"> Feminino <br><br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" maxlength="30"><br>
 
-        Interesses:
-        <input type="checkbox" name="interesse" value="html"> HTML
-        <input type="checkbox" name="interesse" value="css"> CSS
-        <input type="checkbox" name="interesse" value="js"> JavaScript <br><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email"><br>
 
-        Foto: <input type="file" name="foto"><br><br>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="0" max="120"><br>
 
-        Observações: <br>
-        <textarea name="mensagem" rows="4" cols="40"></textarea><br><br>
+        <label for="nasc">Nascimento:</label>
+        <input type="date" id="nasc" name="nasc"><br>
 
-        Curso:
-        <select name="curso">
-            <option value="frontend">Front-End</option>
-            <option value="backend">Back-End</option>
-            <option value="design">Design</option>
-        </select><br><br>
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto"><br>
+
+        <label for="msg">Mensagem:</label><br>
+        <textarea id="msg" name="msg" rows="4" cols="40"></textarea><br>
 
         <input type="submit" value="Enviar">
     </form>
 </div>
 
-<h2>Botões em Formulários</h2>
+<h2>Uso correto de radio e checkbox (labels e agrupamento)</h2>
 <p>
-    Além de <code>&lt;input type="submit"&gt;</code>, podemos usar outros botões:
+    Para usabilidade e acessibilidade: associe cada input a um <code>&lt;label for="id"&gt;</code>.
+    Agrupe radios/checkboxes relacionados com <code>&lt;fieldset&gt;</code> e descreva com <code>&lt;legend&gt;</code>.
 </p>
-<ul>
-    <li><code>submit</code> – envia o formulário.</li>
-    <li><code>reset</code> – limpa todos os campos.</li>
-    <li><code>button</code> – botão genérico (pode ser usado com JavaScript).</li>
-</ul>
+
 <div class="html">
-    <code><pre>&lt;form action="#" method="post"&gt;
-    &lt;input type="submit" value="Enviar"&gt;
-    &lt;input type="reset" value="Limpar"&gt;
-    &lt;button type="button" onclick="alert('Olá!')"&gt;Clique Aqui&lt;/button&gt;
-&lt;/form&gt;</pre></code>
+    <code><pre>&lt;fieldset&gt;
+  &lt;legend&gt;Gênero&lt;/legend&gt;
+
+  &lt;input type="radio" id="g-m" name="genero" value="M"&gt;
+  &lt;label for="g-m"&gt;Masculino&lt;/label&gt;
+
+  &lt;input type="radio" id="g-f" name="genero" value="F"&gt;
+  &lt;label for="g-f"&gt;Feminino&lt;/label&gt;
+
+  &lt;input type="radio" id="g-o" name="genero" value="O"&gt;
+  &lt;label for="g-o"&gt;Outro&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset&gt;
+  &lt;legend&gt;Interesses&lt;/legend&gt;
+  &lt;input type="checkbox" id="i-html" name="interesse[]" value="html"&gt;
+  &lt;label for="i-html"&gt;HTML&lt;/label&gt;
+
+  &lt;input type="checkbox" id="i-css" name="interesse[]" value="css"&gt;
+  &lt;label for="i-css"&gt;CSS&lt;/label&gt;
+&lt;/fieldset&gt;</pre></code>
 </div>
 <div class="browser">
-    <form action="#" method="post">
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpar">
-        <button type="button" onclick="alert('Olá!')">Clique Aqui</button>
+    <fieldset>
+        <legend>Gênero</legend>
+
+        <input type="radio" id="g-m" name="genero" value="M">
+        <label for="g-m">Masculino</label>
+
+        <input type="radio" id="g-f" name="genero" value="F">
+        <label for="g-f">Feminino</label>
+
+        <input type="radio" id="g-o" name="genero" value="O">
+        <label for="g-o">Outro</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Interesses</legend>
+        <input type="checkbox" id="i-html" name="interesse[]" value="html">
+        <label for="i-html">HTML</label>
+
+        <input type="checkbox" id="i-css" name="interesse[]" value="css">
+        <label for="i-css">CSS</label>
+    </fieldset>
+</div>
+
+<h2>Validação nativa do HTML e atributos úteis</h2>
+<p>
+    HTML tem validação básica de campos sem JS (ótimo pra UX). Alguns atributos importantes:
+</p>
+<ul>
+    <li><code>required</code> — campo obrigatório.</li>
+    <li><code>pattern</code> — regex para validar o valor (ex.: telefones, CPFs simples).</li>
+    <li><code>min / max</code> — para <code>number</code> e datas.</li>
+    <li><code>maxlength / minlength</code> — limite de caracteres permitido.</li>
+    <li><code>placeholder</code> — dica dentro do campo (não substitui label).</li>
+    <li><code>autocomplete</code> — controla preenchimento automático.</li>
+</ul>
+
+<div class="html">
+    <code><pre>&lt;input type="text" name="usuario" required minlength="3" maxlength="20" placeholder="seu_nome"&gt;
+
+&lt;input type="tel" name="fone" pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" placeholder="(11) 99999-9999"&gt;</pre></code>
+</div>
+
+<h2>Quando você precisa de back-end</h2>
+<p>
+    HTML cuida da coleta e validação básica no cliente. As ações abaixo <strong>exigem</strong> processamento no
+    servidor:
+</p>
+<ul>
+    <li>Salvar dados em um banco (MySQL, PostgreSQL, MongoDB...)</li>
+    <li>Enviar e-mail com informações do formulário</li>
+    <li>Autenticar usuários (login/senha)</li>
+    <li>Tratar uploads (salvar arquivos, validar tamanho/tipo)</li>
+</ul>
+<p>
+    Em resumo: <code>&lt;form method="get"&gt;</code> pode ser testado só com HTML (você verá parâmetros na URL).
+    Já <code>post</code> normalmente precisa de um endpoint no back-end para realmente fazer algo útil.
+</p>
+
+<h2>Boas práticas e acessibilidade</h2>
+<ul>
+    <li>Use sempre <code>&lt;label for="..."/&gt;</code> — amplia área clicável e ajuda leitores de tela.</li>
+    <li>Agrupe campos relacionados com <code>&lt;fieldset&gt;</code> e descreva com <code>&lt;legend&gt;</code>.</li>
+    <li>Forneça mensagens de erro claras (validação no front com JS e no back-end).</li>
+    <li>Use atributos ARIA apenas quando necessário; prefira HTML semântico primeiro.</li>
+    <li>Proteja formulários contra CSRF e valide tudo no servidor (não confie na validação do cliente).</li>
+</ul>
+
+<h2>Exemplo completo: Formulário de cadastro</h2>
+<div class="html">
+    <code><pre>&lt;form action="/cadastro" method="post" enctype="multipart/form-data"&gt;
+  &lt;label for="nome"&gt;Nome completo&lt;/label&gt;
+  &lt;input type="text" id="nome" name="nome" required maxlength="100"&gt;
+
+  &lt;label for="email"&gt;E-mail&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Gênero&lt;/legend&gt;
+    &lt;input type="radio" id="m" name="genero" value="M"&gt;
+    &lt;label for="m"&gt;Masculino&lt;/label&gt;
+
+    &lt;input type="radio" id="f" name="genero" value="F"&gt;
+    &lt;label for="f"&gt;Feminino&lt;/label>
+
+    &lt;input type="radio" id="o" name="genero" value="O"&gt;
+    &lt;label for="o"&gt;Outro&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;label for="curso"&gt;Curso&lt;/label&gt;
+  &lt;select id="curso" name="curso"&gt;
+    &lt;option value="frontend"&gt;Front-End&lt;/option&gt;
+    &lt;option value="backend"&gt;Back-End&lt;/option&gt;
+    &lt;option value="design"&gt;Design&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for="foto"&gt;Foto (opcional)&lt;/label&gt;
+  &lt;input type="file" id="foto" name="foto"&gt;
+
+  &lt;input type="submit" value="Cadastrar"&gt;
+&lt;/form&gt;</pre></code>
+</div>
+
+<div class="browser">
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" required maxlength="100"><br>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <fieldset>
+            <legend>Gênero</legend>
+            <input type="radio" id="m" name="genero" value="M">
+            <label for="m">Masculino</label>
+
+            <input type="radio" id="f" name="genero" value="F">
+            <label for="f">Feminino</label>
+
+            <input type="radio" id="o" name="genero" value="O">
+            <label for="o">Outro</label>
+        </fieldset>
+
+        <label for="curso">Curso</label>
+        <select id="curso" name="curso">
+            <option value="frontend">Front-End</option>
+            <option value="backend">Back-End</option>
+            <option value="design">Design</option>
+        </select><br>
+
+        <label for="foto">Foto (opcional)</label>
+        <input type="file" id="foto" name="foto"><br>
+
+        <input type="submit" value="Cadastrar">
     </form>
 </div>
 
 <h2>Resumo</h2>
 <p>
-    - Use <code>&lt;form&gt;</code> para criar formulários. <br>
-    - Defina <code>action</code> (para onde enviar) e <code>method</code> (<code>get</code> ou <code>post</code>). <br>
-    - Utilize diferentes tipos de campos de entrada (<code>text</code>, <code>password</code>, <code>email</code>,
-    <code>radio</code>, <code>checkbox</code>, <code>file</code>, <code>textarea</code>, <code>select</code>). <br>
-    - Lembre-se de usar <code>&lt;label&gt;</code> para melhorar a acessibilidade e experiência do usuário. <br>
-    - Use botões para enviar (<code>submit</code>), limpar (<code>reset</code>) ou acionar ações customizadas
-    (<code>button</code>). <br>
+    - Sempre associe <code>&lt;label for&gt;</code> aos inputs. <br>
+    - Use <code>fieldset/legend</code> para agrupar opções (radios/checkboxes). <br>
+    - <code>GET</code> exibe parâmetros na URL; <code>POST</code> envia no corpo (requer back-end para processar). <br>
+    - Para upload use <code>enctype="multipart/form-data"</code>. <br>
+    - Valide no cliente (HTML/JS) e no servidor — nunca confie só no cliente. <br>
+    - Proteja seus endpoints (CSRF, validação, sanitização). <br>
 </p>

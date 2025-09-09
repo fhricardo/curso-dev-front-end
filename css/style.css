@@ -386,7 +386,7 @@ main {
         .obs {
             margin-top: 2rem;
             width: 100%;
-            background-color: yellow;
+            background-color: lightgoldenrodyellow;
             margin-bottom: 1rem;
             padding: 2.5rem 0rem .5rem 0rem;
             border-radius: .5rem;
@@ -557,6 +557,25 @@ main {
             a:visited {
                 color: #06c;
                 text-decoration: underline;
+            }
+
+            form {
+                padding: .5rem;
+
+                label,
+                input,
+                select,
+                textarea {
+                    margin: .5rem .25rem;
+                }
+            }
+
+            header,
+            main,
+            aside,
+            footer {
+                all: revert;
+                margin: 1rem;
             }
 
             code,

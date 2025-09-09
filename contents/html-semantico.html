@@ -1,1 +1,108 @@
 <h1>HTML Semântico</h1>
+<p>
+    O HTML semântico surgiu com o HTML5 e tem como objetivo dar mais significado ao conteúdo da página.
+    Em vez de usar apenas <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code> genéricos, podemos utilizar
+    tags que descrevem a função de cada parte do conteúdo.
+    Isso ajuda na <strong>acessibilidade</strong>, na <strong>indexação em buscadores (SEO)</strong> e na
+    <strong>organização do código</strong>.
+</p>
+
+<h2>O que é Semântica no HTML?</h2>
+<p>
+    Semântica significa "significado".
+    No HTML, usar tags semânticas torna o código mais fácil de entender tanto para humanos quanto para máquinas.
+    Por exemplo: em vez de usar <code>&lt;div id="menu"&gt;</code>, podemos usar diretamente a tag
+    <code>&lt;nav&gt;</code>, que já indica um bloco de navegação.
+</p>
+
+<h2>Principais Tags Semânticas do HTML5</h2>
+<p>
+    Abaixo estão as tags semânticas mais usadas, suas funções e exemplos práticos:
+</p>
+
+<ul>
+    <li><code>&lt;header&gt;</code> – Cabeçalho da página ou seção (geralmente contém logotipo, título e menu).</li>
+    <li><code>&lt;nav&gt;</code> – Área de navegação (links de menu, índices de páginas, etc.).</li>
+    <li><code>&lt;main&gt;</code> – Conteúdo principal da página (único por página).</li>
+    <li><code>&lt;section&gt;</code> – Uma seção de conteúdo relacionada (capítulo, bloco de tema, etc.).</li>
+    <li><code>&lt;article&gt;</code> – Conteúdo independente e reutilizável (notícia, post de blog, comentário).</li>
+    <li><code>&lt;aside&gt;</code> – Conteúdo lateral ou complementar (propagandas, links extras, informações
+        adicionais).</li>
+    <li><code>&lt;footer&gt;</code> – Rodapé da página ou seção (informações de contato, direitos autorais, links
+        adicionais).</li>
+    <li><code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code> – Usados para imagens, diagramas ou gráficos com
+        legenda.</li>
+    <li><code>&lt;mark&gt;</code> – Destaca trechos de texto importantes.</li>
+    <li><code>&lt;time&gt;</code> – Representa uma data ou hora.</li>
+</ul>
+
+<h2>Exemplo de Estrutura com HTML Semântico</h2>
+<div class="html">
+    <code><pre>&lt;header&gt;
+    &lt;h1&gt;Meu Blog&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a href="index.html"&gt;Início&lt;/a&gt;
+        &lt;a href="sobre.html"&gt;Sobre&lt;/a&gt;
+        &lt;a href="contato.html"&gt;Contato&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Primeiro Post&lt;/h2&gt;
+        &lt;p&gt;Este é o conteúdo do post...&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Links Úteis&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2025 - Meu Blog. Todos os direitos reservados.&lt;/p&gt;
+&lt;/footer&gt;</pre></code>
+</div>
+
+<div class="browser" style="border:1px solid #ccc; padding:10px;">
+    <header>
+        <h1>Meu Blog</h1>
+        <nav>
+            <a href="#">Início</a> |
+            <a href="#">Sobre</a> |
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Primeiro Post</h2>
+            <p>Este é o conteúdo do post...</p>
+        </article>
+
+        <aside>
+            <h3>Links Úteis</h3>
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 - Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Use tags semânticas para dar significado ao conteúdo. <br>
+    - <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> e <code>&lt;footer&gt;</code> estruturam a página. <br>
+    - <code>&lt;section&gt;</code> e <code>&lt;article&gt;</code> organizam o conteúdo. <br>
+    - <code>&lt;aside&gt;</code> guarda informações complementares. <br>
+    - <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code> descrevem imagens e gráficos. <br>
+    - O HTML semântico melhora a acessibilidade e o SEO, além de deixar o código mais legível. <br>
+</p>
