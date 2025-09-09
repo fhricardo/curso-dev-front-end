@@ -1,0 +1,77 @@
+<h1>Atividade 08 - Estrutura de Site com Tags Semânticas</h1>
+<p>
+    Nesta atividade você deverá criar a estrutura de um site simples com <strong>4 páginas</strong>,
+    utilizando corretamente as principais <strong>tags semânticas do HTML5</strong>.
+    O objetivo é praticar a organização de conteúdo e a construção de layouts básicos com significado claro.
+</p>
+
+<h2>Regras da Atividade</h2>
+<ul>
+    <li>O site deve ter 4 páginas: <code>index.html</code>, <code>sobre.html</code>, <code>servicos.html</code> e
+        <code>contato.html</code>.</li>
+    <li>Cada página deve conter:
+        <ul>
+            <li><code>&lt;header&gt;</code> com o título do site e um menu de navegação (links para todas as páginas).
+            </li>
+            <li><code>&lt;main&gt;</code> com o conteúdo principal daquela página.</li>
+            <li><code>&lt;aside&gt;</code> com um conteúdo complementar (pode ser uma lista de links, propaganda ou
+                curiosidade).</li>
+            <li><code>&lt;footer&gt;</code> com direitos autorais e informações de rodapé.</li>
+        </ul>
+    </li>
+    <li>Utilize a tag <code>&lt;nav&gt;</code> dentro do <code>&lt;header&gt;</code> para criar o menu de navegação.
+    </li>
+    <li>Use a tag <code>&lt;section&gt;</code> ou <code>&lt;article&gt;</code> quando for necessário dividir o conteúdo
+        principal.</li>
+    <li>Não é necessário aplicar CSS nesta atividade (apenas HTML).</li>
+</ul>
+
+<h2>Exemplo de Estrutura da Página Inicial</h2>
+<div class="html">
+    <code><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meu Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Meu Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="index.html"&gt;Início&lt;/a&gt; |
+            &lt;a href="sobre.html"&gt;Sobre&lt;/a&gt; |
+            &lt;a href="servicos.html"&gt;Serviços&lt;/a&gt; |
+            &lt;a href="contato.html"&gt;Contato&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Bem-vindo ao site!&lt;/h2&gt;
+            &lt;p&gt;Este é o conteúdo principal da página inicial.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Links úteis&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 - Meu Site. Todos os direitos reservados.&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>
+</div>
+
+<h2>Desafio Extra</h2>
+<p>
+    Personalize o conteúdo de cada página (Sobre, Serviços e Contato), utilizando sempre as tags semânticas
+    adequadas para dar significado ao conteúdo.
+    Ao final, você terá um site de múltiplas páginas totalmente estruturado em HTML5.
+</p>

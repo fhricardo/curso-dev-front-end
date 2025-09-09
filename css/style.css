@@ -560,15 +560,22 @@ main {
             }
 
             form {
-                padding: .5rem;
+                all: revert;
+                padding: .25rem;
 
                 label,
                 input,
                 select,
-                textarea {
-                    margin: .5rem .25rem;
+                textarea,
+                fieldset {
+                    margin: .25rem;
+                }
+
+                fieldset {
+                    padding: 0.5rem;
                 }
             }
+
 
             header,
             main,
