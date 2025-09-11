@@ -584,7 +584,7 @@ main {
             background-image: url(../assets/browser-bar.svg);
             background-position: top left;
             background-repeat: no-repeat;
-            padding: 2.5rem .5rem .5rem .5rem;
+            padding: 2.5rem .5rem .5rem .5rem !important;
             border: 1px solid #48484840;
             border-radius: .5rem;
             display: block;
@@ -612,6 +612,7 @@ main {
                 background-color: transparent !important;
                 display: block;
                 border: none;
+                font-size: var(--size);
             }
 
             dd {

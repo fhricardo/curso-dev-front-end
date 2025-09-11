@@ -1,0 +1,83 @@
+<h1>Começando com CSS</h1>
+<p>
+    O <strong>CSS (Cascading Style Sheets)</strong> é a linguagem usada para definir o estilo de páginas web.
+    Enquanto o HTML cuida da estrutura e do conteúdo, o CSS controla <strong>cores, fontes, espaçamentos,
+        tamanhos, bordas e posicionamento</strong>.
+</p>
+
+<h2>Por que usar CSS?</h2>
+<p>
+    Com o CSS podemos separar a estrutura (HTML) da apresentação (estilo).
+    Isso deixa o código mais organizado, facilita a manutenção e dá muito mais controle sobre o visual do site.
+</p>
+
+<h2>Formas de aplicar CSS</h2>
+<p>
+    Existem três formas principais de aplicar CSS em um documento HTML:
+</p>
+<ul>
+    <li><strong>Inline</strong>: o estilo é aplicado diretamente no elemento HTML.</li>
+    <li><strong>Interno</strong>: o estilo é escrito dentro da tag <code>&lt;style&gt;</code> no próprio documento.</li>
+    <li><strong>Externo</strong>: o estilo fica em um arquivo separado (<code>.css</code>) e é importado no HTML.</li>
+</ul>
+
+<h3>CSS inline</h3>
+<div class="html">
+    <code><pre>&lt;p style="color: blue; font-size: 20px;"&gt;
+    Este texto está azul e maior.
+&lt;/p&gt;</pre></code>
+</div>
+
+<div class="browser" style="border:1px solid #ccc; padding:10px;">
+    <p style="color: blue; font-size: 24px;">
+        Este texto está azul e maior.
+    </p>
+</div>
+<h3>CSS Interno</h3>
+<div class="html">
+    <code><pre>&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: red;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;Este texto está vermelho.&lt;/p&gt;
+&lt;/body&gt;</pre></code>
+</div>
+
+<div class="browser" style="border:1px solid #ccc; padding:10px;">
+    <p style="color:red; font-size:18px;">Este texto está vermelho.</p>
+</div>
+<h3>CSS Externo</h3>
+<div class="html">
+    <code><pre>&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;Texto estilizado com CSS externo.&lt;/p&gt;
+&lt;/body&gt;
+
+/* Arquivo style.css */
+p {
+    color: green;
+    font-size: 22px;
+}
+</pre></code>
+</div>
+
+<div class="browser" style="border:1px solid #ccc; padding:10px;">
+    <p style="color:green; font-size:22px;">Texto estilizado com CSS externo.</p>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - O CSS define o estilo visual do HTML.<br>
+    - Podemos aplicar CSS de três formas: inline, interno e externo.<br>
+    - O uso de arquivos externos é a prática mais comum e recomendada.<br>
+    - CSS dá vida ao HTML: cores, fontes, espaçamentos, tamanhos e muito mais.<br>
+</p>
