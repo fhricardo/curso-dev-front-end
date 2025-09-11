@@ -29,7 +29,7 @@
 <div class="browser">
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
+        <input type="text" id="nome1" name="nome">
         <input type="submit" value="Enviar">
     </form>
 </div>
@@ -108,13 +108,13 @@
 <div class="browser">
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" maxlength="100" size="30"><br>
+        <input type="text" id="nome2" name="nome" maxlength="100" size="30"><br>
 
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" maxlength="30"><br>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email"><br>
+        <label for="email2">E-mail:</label>
+        <input type="email" id="email2" name="email2"><br>
 
         <label for="idade">Idade:</label>
         <input type="number" id="idade" name="idade" min="0" max="120"><br>
@@ -228,7 +228,8 @@
     <li>Agrupe campos relacionados com <code>&lt;fieldset&gt;</code> e descreva com <code>&lt;legend&gt;</code>.</li>
     <li>Forneça mensagens de erro claras (validação no front com JS e no back-end).</li>
     <li>Use atributos ARIA apenas quando necessário; prefira HTML semântico primeiro.</li>
-    <li>Proteja formulários contra CSRF e valide tudo no servidor (não confie na validação do cliente).</li>
+    <li>Proteja formulários contra <a href="contents/terms/csrf.html" data-target="#conteudo-especifico"
+            class="modal-trigger">CSRF</a> e valide tudo no servidor (não confie na validação do cliente).</li>
 </ul>
 
 <h2>Exemplo completo: Formulário de cadastro</h2>
@@ -269,10 +270,10 @@
 <div class="browser">
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="nome" required maxlength="100"><br>
+        <input type="text" id="nome3" name="nome" required maxlength="100"><br>
 
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required><br>
+        <label for="email1">E-mail</label>
+        <input type="email1" id="email1" name="email1" required><br>
 
         <fieldset>
             <legend>Gênero</legend>
@@ -293,8 +294,8 @@
             <option value="design">Design</option>
         </select><br>
 
-        <label for="foto">Foto (opcional)</label>
-        <input type="file" id="foto" name="foto"><br>
+        <label for="foto1">Foto (opcional)</label>
+        <input type="file" id="foto1" name="foto1"><br>
 
         <input type="submit" value="Cadastrar">
     </form>

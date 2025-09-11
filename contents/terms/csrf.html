@@ -1,0 +1,30 @@
+<div id="conteudo-especifico">
+    <h2>CSRF (Cross-site Request Forgery)</h2>
+    <p>É um ataque cibernético que engana um navegador para que ele execute uma ação indesejada em uma aplicação web
+        onde o
+        usuário já está autenticado, explorando a confiança da aplicação no usuário para realizar ações que ele não
+        pretendia, como fazer uma transferência de fundos ou alterar uma senha. </p>
+    <h3>Como funciona um ataque CSRF</h3>
+    <ol>
+        <li>Autenticação:</li>
+        <p>O usuário acessa um site e faz login, e seu navegador fica autenticado nesse site, mantendo um cookie de
+            sessão
+            ativo. </p>
+        <li>Engenharia Social:</li>
+        <p>O invasor cria uma página maliciosa (por exemplo, em um e-mail ou link), que, ao ser acessada, faz o
+            navegador do
+            usuário enviar uma solicitação para o site onde ele está autenticado. </p>
+        <li>Execução da Ação:</li>
+        <p>O site recebe a solicitação, que parece ser legítima porque contém o cookie de sessão do usuário. O site,
+            então,
+            executa a ação (como alterar uma senha, transferir dinheiro, etc.) como se o usuário a tivesse solicitado
+            voluntariamente</p>
+    </ol>
+    <h3>Impacto de um ataque CSRF</h3>
+    <p>Um ataque bem-sucedido pode ter consequências graves, incluindo: Transferências de fundos não autorizadas,
+        Alteração
+        de senhas e configurações da conta, Roubo de dados da conta do usuário, Prejuízos à reputação da empresa. </p>
+    <h3>Como se proteger?</h3>
+    <p>Para se defender contra ataques CSRF, desenvolvedores de aplicações web utilizam técnicas como a implementação de
+        tokens CSRF, que são gerados para cada sessão e são verificados antes de qualquer ação ser executada. </p>
+</div>

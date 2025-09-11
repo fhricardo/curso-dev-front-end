@@ -1,0 +1,91 @@
+<h1>Box Model no CSS</h1>
+<p>
+    O <strong>Box Model</strong>, ou Modelo de Caixa, é um dos conceitos fundamentais em CSS.
+    Ele define como os elementos HTML são renderizados na página, determinando seu tamanho,
+    espaçamento interno, borda e distância em relação a outros elementos.
+</p>
+<p>
+    Em resumo: <strong>todo elemento HTML é representado como uma caixa</strong>.
+</p>
+
+<h2>Estrutura do Box Model</h2>
+<p>
+    Cada caixa é composta por quatro camadas:
+</p>
+<ul>
+    <li><strong>Content</strong> – Área onde fica o conteúdo (texto, imagem, etc.).</li>
+    <li><strong>Padding</strong> – Espaçamento interno, entre o conteúdo e a borda.</li>
+    <li><strong>Border</strong> – Contorno do elemento (pode ter espessura, estilo e cor).</li>
+    <li><strong>Margin</strong> – Espaçamento externo, que separa o elemento de outros elementos.</li>
+</ul>
+
+<div class="css">
+    <code><pre>
+.caixa {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}</pre></code>
+</div>
+
+<div class="browser" style="border:1px solid #ccc; padding:20px;">
+    <div style="width:100px; height:100px; padding:20px; border:2px solid black; margin:10px; background:#eee;">
+        Conteúdo
+    </div>
+</div>
+
+<h2>Box-Sizing</h2>
+<p>
+    Por padrão, o CSS usa o valor <code>content-box</code>, ou seja, a largura e altura
+    definidas no elemento <strong>não incluem</strong> padding e borda.
+    Isso pode alterar o tamanho final da caixa.
+</p>
+<p>
+    Exemplo: se um elemento tiver <code>width: 100px</code>, <code>padding: 20px</code>
+    e <code>border: 2px</code>, a largura total será:
+</p>
+<p><strong>100px + 20px + 20px + 2px + 2px = 144px</strong></p>
+
+<p>
+    Para facilitar, podemos usar <code>box-sizing: border-box;</code>.
+    Assim, a largura e altura declaradas já consideram o padding e a borda,
+    tornando o controle do layout mais previsível.
+</p>
+
+<div class="css">
+    <code><pre>/* Sem border-box */
+.caixa1 {
+    width: 100px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+/* Com border-box */
+.caixa2 {
+    width: 100px;
+    padding: 20px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}</pre></code>
+</div>
+
+<div class="browser">
+    <div style="width:100px; padding:20px; border:2px solid black; background:#ffc;">
+        Sem border-box
+    </div>
+    <div style="width:100px; padding:20px; border:2px solid black; box-sizing:border-box; background:#cfc;">
+        Com border-box
+    </div>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Todo elemento é uma caixa (Box Model).<br>
+    - O tamanho final é composto por: <strong>content + padding + border + margin</strong>.<br>
+    - <code>padding</code> = espaçamento interno.<br>
+    - <code>border</code> = contorno do elemento.<br>
+    - <code>margin</code> = espaçamento externo.<br>
+    - Use <code>box-sizing: border-box;</code> para facilitar o controle de largura e altura.<br>
+</p>

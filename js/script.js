@@ -72,9 +72,11 @@ const activateImageHover = () => {
 
 // Modal functions
 const modal = document.querySelector("#meuModal");
-const modalContent = modal?.querySelector(".content");
+const modalContent = modal.querySelector(".contentModal");
+console.log(modal)
+console.log(modalContent)
 
-const loadModalContent = async (url, selector = ".content") => {
+const loadModalContent = async (url, selector = ".contentModal") => {
     if (!url || !modal || !modalContent) return;
 
     try {
@@ -134,5 +136,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Configura efeito hover nas imagens
-    setupImageHoverEffect();
+    //setupImageHoverEffect();
 });

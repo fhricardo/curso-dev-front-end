@@ -1,0 +1,65 @@
+<h1>Containers em HTML</h1>
+<p>
+    Containers são elementos utilizados para <strong>agrupar</strong> e
+    <strong>organizar</strong> outros elementos dentro da página.
+    Eles não possuem, por si só, um significado semântico (com exceção dos
+    containers semânticos que veremos depois), mas ajudam na
+    <strong>estruturação</strong> e no <strong>estilo</strong> com CSS.
+</p>
+
+<h2>Principais Containers Genéricos</h2>
+<p>
+    Antes do HTML5, praticamente todo o conteúdo era organizado usando apenas
+    dois elementos principais:
+</p>
+
+<ul>
+    <li><code>&lt;div&gt;</code> – Container em nível de bloco.
+        Usado para agrupar seções maiores, como menus, áreas de conteúdo ou rodapés.
+    </li>
+    <li><code>&lt;span&gt;</code> – Container em nível de linha.
+        Usado para destacar ou estilizar trechos de texto sem quebrar a linha.
+    </li>
+</ul>
+
+<h2>Outros Containers Úteis</h2>
+<ul>
+    <li><code>&lt;iframe&gt;</code> – Cria um “quadro embutido” que carrega outra página
+        dentro do documento atual.</li>
+    <li><code>&lt;fieldset&gt;</code> – Agrupa campos de um formulário.</li>
+    <li><code>&lt;details&gt;</code> – Cria um container que pode ser expandido ou recolhido pelo usuário.</li>
+</ul>
+
+<h2>Exemplo de Containers em Ação</h2>
+<div class="html">
+    <code><pre>&lt;div class="conteudo"&gt;
+    &lt;h2&gt;Título de uma seção&lt;/h2&gt;
+    &lt;p&gt;Esse parágrafo está dentro de um container div.&lt;/p&gt;
+
+    &lt;p&gt;Podemos usar &lt;span class="destaque"&gt;span&lt;/span&gt; 
+       para destacar um trecho de texto.&lt;/p&gt;
+
+    &lt;iframe src="https://www.example.com" width="300" height="200"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</pre></code>
+</div>
+
+<div class="browser">
+    <div>
+        <h2>Título de uma seção</h2>
+        <p>Esse parágrafo está dentro de um container div.</p>
+        <p>Podemos usar <span style="color:red; font-weight:bold;">span</span>
+            para destacar um trecho de texto.</p>
+        <iframe src="https://www.example.com" width="300" height="100"></iframe>
+    </div>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Use <code>&lt;div&gt;</code> para agrupar blocos de conteúdo.<br>
+    - Use <code>&lt;span&gt;</code> para destacar partes inline de um texto.<br>
+    - <code>&lt;iframe&gt;</code> permite inserir páginas externas.<br>
+    - <code>&lt;fieldset&gt;</code> organiza campos de formulários.<br>
+    - <code>&lt;details&gt;</code> cria containers que podem ser abertos ou fechados.<br>
+    - Containers são a base da estrutura, e com o HTML5 eles evoluem para as
+    <strong>tags semânticas</strong>, que veremos na próxima aula.
+</p>
