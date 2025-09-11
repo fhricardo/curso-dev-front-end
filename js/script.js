@@ -73,11 +73,14 @@ const activateImageHover = () => {
 // Modal functions
 const modal = document.querySelector("#meuModal");
 const modalContent = modal.querySelector(".contentModal");
-console.log(modal)
-console.log(modalContent)
 
 const loadModalContent = async (url, selector = ".contentModal") => {
     if (!url || !modal || !modalContent) return;
+
+    // garante que o caminho sempre seja relativo à raiz
+    if (!url.startsWith("/")) {
+        url = "/" + url;
+    }
 
     try {
         const response = await fetch(url);
@@ -114,17 +117,20 @@ const closeModal = () => {
 
 // Inicialização quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", () => {
-    // Configura toggle de respostas
-    setupResponseToggle();
+    // Configura toggle de respostas (se existir)
+    if (typeof setupResponseToggle === "function") {
+        setupResponseToggle();
+    }
 
-    // Configura triggers do modal
-    document.querySelectorAll(".modal-trigger").forEach(link => {
-        link.addEventListener("click", function (e) {
+    // Delegação de eventos para modal-trigger
+    document.addEventListener("click", (e) => {
+        const link = e.target.closest(".modal-trigger");
+        if (link) {
             e.preventDefault();
-            const url = this.getAttribute("href");
-            const target = this.getAttribute("data-target");
+            const url = link.getAttribute("href");
+            const target = link.getAttribute("data-target");
             loadModalContent(url, target);
-        });
+        }
     });
 
     // Configura fechamento do modal
@@ -134,7 +140,4 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target === modal) closeModal();
         });
     }
-
-    // Configura efeito hover nas imagens
-    //setupImageHoverEffect();
 });

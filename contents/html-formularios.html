@@ -59,7 +59,10 @@
   &lt;input type="submit" value="Cadastrar"&gt;
 &lt;/form&gt;</pre></code>
 </div>
-
+<div class="obs">
+    <p>É importante lembrar que o método <code>post</code> exige a utilização de uma linguagem back-end (como o PHP, por
+        exemplo) para que as informações sejam processadas.</p>
+</div>
 <h2>Tipos de campos e exemplos práticos</h2>
 <p>
     Cada tipo tem seu propósito — use o mais adequado para UX/validação:
@@ -186,7 +189,66 @@
         </fieldset>
     </form>
 </div>
-
+<h2>Botões em Formulários</h2>
+<p>Elementos fundamentais em formulários, os botões permitem a interatividade dos usuários e a execução de tarefas, como
+    o próprio envio do formulário.</p>
+<p>Os botões podem ser inseridos em formulários das seguintes formas:</p>
+<h3>No formato de inputs:</h3>
+<ul>
+    <li><code>type="submit"</code>: o submit é quem executa o envio do formuário e deve existir apenas uma vez em um
+        form.</li>
+    <li><code>type="reset"</code>: o reset é responsável por limpar o conteúdo de um form e também deve ser utilizado
+        apenas uma vez em cada form.</li>
+    <li><code>type="button"</code>: o tipo <strong>button</strong> não possui uma ação definida, sendo necessário
+        utilizar JavaScript para atribuir funções específicas a eles. Podem ser utilizados diversos do tipo button em um
+        form.</li>
+</ul>
+<div class="html"><code><pre>...
+&lt;!-- No formato de input --&gt;
+&lt;input type="reset" value="Limpar"&gt;
+&lt;input type="submit" value="Enviar"&gt;
+&lt;input type="button" value="Botão"&gt;
+...</pre></code>
+</div>
+<div class="browser">
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+    <input type="button" value="Botão">
+</div>
+<h3>No formato de buttons:</h3>
+<p>Com uma estrutura um pouco diferente dos inputs que mostram botões, a tag <code>&lt;button&gt;</code> requer a tag de
+    fechamento <code>&lt;button&gt;</code> e pode ter os seguintes tipos:</p>
+<ul>
+    <li><code>type:"submit"</code>: Assim como no input, o button com o type submit tem como função o envio do
+        formulário.</li>
+    <li><code>type:"reset"</code>: Também como acontece no input, o type reset faz com que a função do button seja a de
+        limpar o formulário.</li>
+    <li><code>type:"button"</code>: o button do tipo button é o nosso botão genérico, utilizado quando vamos atribuir
+        funções utilizando JavaScript.</li>
+</ul>
+<div class="html"><code><pre>...
+&lt;!-- No formato de input --&gt;
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpar&lt;/button&gt;
+&lt;button type="button"&gt;Botão&lt;/button&gt;
+...</pre></code></div>
+<div class="browser">
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
+    <button type="button">Botão</button>
+</div>
+<div class="obs">
+    <p>É importante lembrar que o <code>&lt;button&gt;</code> sem o atributo <code>type</code> definido, assume, por
+        padrão, a função de <code>submit</code> e vai enviar o formulário.</p>
+</div>
+<div class="tip">
+    <p>Utilizar <code>&lt;button type="button"&gt;Botão&lt;/button&gt;</code> ao invés de
+        <code>&lt;input type="button" value="Botão"&gt;</code> é mais interessante do ponto de vista de personalização,
+        uma vez que nos permite atribuir ícones aos botões com facilidade, por meio da utilização de bibliotecas de
+        ícones como <a href="/contents/terms/fontawesome.html" data-target="#conteudo-especifico"
+            class="modal-trigger">fontawesome</a>
+    </p>
+</div>
 <h2>Validação nativa do HTML e atributos úteis</h2>
 <p>
     HTML tem validação básica de campos sem JS (ótimo pra UX). Alguns atributos importantes:
@@ -228,7 +290,7 @@
     <li>Agrupe campos relacionados com <code>&lt;fieldset&gt;</code> e descreva com <code>&lt;legend&gt;</code>.</li>
     <li>Forneça mensagens de erro claras (validação no front com JS e no back-end).</li>
     <li>Use atributos ARIA apenas quando necessário; prefira HTML semântico primeiro.</li>
-    <li>Proteja formulários contra <a href="contents/terms/csrf.html" data-target="#conteudo-especifico"
+    <li>Proteja formulários contra <a href="/contents/terms/csrf.html" data-target="#conteudo-especifico"
             class="modal-trigger">CSRF</a> e valide tudo no servidor (não confie na validação do cliente).</li>
 </ul>
 

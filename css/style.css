@@ -45,8 +45,7 @@ body {
 }
 
 .modal .card {
-    width: 30rem;
-    max-width: 90vw;
+    max-width: 50vw;
     height: auto;
     background-color: var(--light);
     border-radius: 1rem;
