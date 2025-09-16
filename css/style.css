@@ -608,7 +608,7 @@ main {
                 color: black;
                 margin: 0;
                 padding: 0;
-                background-color: transparent !important;
+                /* background-color: transparent !important; */
                 display: block;
                 border: none;
                 font-size: var(--size);
