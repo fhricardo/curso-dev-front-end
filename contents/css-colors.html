@@ -1,0 +1,101 @@
+<h1>Cores em CSS</h1>
+
+<p>
+    No CSS podemos definir cores de várias formas diferentes.
+    Isso permite flexibilidade para criar desde estilos simples até combinações muito sofisticadas.
+</p>
+
+<h2>1. Cores por nome</h2>
+<p>
+    O CSS reconhece mais de 140 nomes de cores. Exemplos: <code>red</code>, <code>blue</code>, <code>green</code>,
+    <code>black</code>, <code>white</code>.
+</p>
+<p>Confira a relação completa de cores com nomes no site do W3 Schools <a
+        href="https://www.w3schools.com/tags/ref_colornames.asp" target="_blank">clicando aqui.</a></p>
+
+<div class="css">
+    <pre><code>p {
+    color: red;
+    background-color: yellow;
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="color:red; background:yellow;">Texto vermelho com fundo amarelo.</p>
+</div>
+
+<h2>2. Cores em código hexadecimal</h2>
+<p>
+    O formato <code>#RRGGBB</code> usa números hexadecimais (0–9 e A–F).
+    Cada par representa a intensidade de vermelho, verde e azul (0 a 255).
+</p>
+
+<div class="css">
+    <pre><code>p {
+    color: #ff0000;   /* vermelho */
+    background-color: #00ff00; /* verde */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="color:#ff0000; background:#00ff00;">Texto vermelho no fundo verde.</p>
+</div>
+
+<h2>3. Cores em RGB</h2>
+<p>
+    O formato <code>rgb(r, g, b)</code> define as intensidades de vermelho, verde e azul (0 a 255).
+</p>
+
+<div class="css">
+    <pre><code>p {
+    color: rgb(0, 0, 255); /* azul */
+    background-color: rgb(200, 200, 200); /* cinza claro */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="color:rgb(0,0,255); background:rgb(200,200,200);">Texto azul com fundo cinza.</p>
+</div>
+
+<h2>4. Cores em RGBA</h2>
+<p>
+    A versão <code>rgba(r, g, b, a)</code> adiciona o canal de transparência (alpha), que vai de 0 (totalmente
+    transparente) até 1 (totalmente opaco).
+</p>
+
+<div class="css">
+    <pre><code>p {
+    background-color: rgba(255, 0, 0, 0.5); /* vermelho semi-transparente */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="background:rgba(255,0,0,0.5);">Fundo vermelho com transparência.</p>
+</div>
+
+<h2>5. Cores em HSL</h2>
+<p>
+    O formato <code>hsl(h, s%, l%)</code> define:
+    - <strong>hue (matiz)</strong>: a cor na roda de 0 a 360 (ex: 0 = vermelho, 120 = verde, 240 = azul).<br>
+    - <strong>saturation (saturação)</strong>: de 0% (cinza) até 100% (cor pura).<br>
+    - <strong>lightness (luminosidade)</strong>: de 0% (preto) até 100% (branco).
+</p>
+
+<div class="css">
+    <pre><code>p {
+    color: hsl(200, 100%, 40%); /* azul forte */
+    background-color: hsl(50, 100%, 80%); /* amarelo claro */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="color:hsl(200,100%,40%); background:hsl(50,100%,80%);">Texto azul sobre fundo amarelo claro.</p>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - Podemos usar cores por <strong>nome</strong> (simples, mas limitado).<br>
+    - Hexadecimal (<code>#RRGGBB</code>) é um dos formatos mais comuns.<br>
+    - <code>rgb()</code> e <code>rgba()</code> permitem mais controle e transparência.<br>
+    - <code>hsl()</code> facilita criar variações de saturação e luminosidade.<br>
+</p>
