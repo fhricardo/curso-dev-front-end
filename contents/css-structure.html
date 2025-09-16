@@ -1,0 +1,82 @@
+<h1>Aula 02 - Estrutura Básica do CSS</h1>
+
+<p>
+    O CSS funciona com um conjunto de <strong>regras de estilo</strong>.
+    Cada regra é formada por um <strong>seletor</strong> e um <strong>bloco de declarações</strong>.
+</p>
+
+<h2>Anatomia de uma regra CSS</h2>
+
+<div class="css">
+    <pre><code>p {
+    color: blue;
+    font-size: 20px;
+}</code></pre>
+</div>
+
+<p>
+    - <strong>Seletor</strong>: <code>p</code> → indica a qual elemento HTML a regra se aplica.<br>
+    - <strong>Propriedade</strong>: <code>color</code>, <code>font-size</code> → características que queremos mudar.<br>
+    - <strong>Valor</strong>: <code>blue</code>, <code>20px</code> → o resultado aplicado à propriedade.<br>
+</p>
+
+<div class="browser">
+    <p style="color: blue; font-size: 20px;">Este é um parágrafo azul e maior.</p>
+</div>
+
+<h2>Seletores mais comuns</h2>
+<ul>
+    <li><strong>Por tipo</strong>: seleciona todos os elementos de uma tag.
+        <code>p { color: red; }</code>
+    </li>
+    <li><strong>Por classe</strong>: usa um ponto (<code>.</code>) antes do nome.
+        <code>.destaque { background: yellow; }</code>
+    </li>
+    <li><strong>Por id</strong>: usa uma cerquilha (<code>#</code>).
+        <code>#titulo { font-size: 32px; }</code>
+    </li>
+</ul>
+
+<h3>Exemplo</h3>
+
+<div class="html">
+    <pre><code>&lt;h1 id="titulo"&gt;Título da Página&lt;/h1&gt;
+&lt;p&gt;Um parágrafo simples.&lt;/p&gt;
+&lt;p class="destaque"&gt;Um parágrafo em destaque.&lt;/p&gt;
+</code></pre>
+</div>
+
+<div class="css">
+    <pre><code>#titulo {
+    color: darkblue;
+}
+p {
+    color: gray;
+}
+.destaque {
+    background: yellow;
+    font-weight: bold;
+}
+</code></pre>
+</div>
+
+<div class="browser">
+    <h1 style="color:darkblue;">Título da Página</h1>
+    <p style="color:gray;">Um parágrafo simples.</p>
+    <p style="background:yellow; font-weight:bold; color:gray;">Um parágrafo em destaque.</p>
+</div>
+
+<h2>Boas práticas iniciais</h2>
+<p>
+    - Prefira usar <strong>classes</strong> ao invés de ids para estilizar vários elementos.<br>
+    - Mantenha nomes de classes significativos, como <code>.botao-primario</code> ou <code>.menu</code>.<br>
+    - Use arquivos externos (<code>.css</code>) para organizar melhor o código.<br>
+</p>
+
+<h2>Resumo</h2>
+<p>
+    - Uma regra CSS é composta por <strong>seletor</strong>, <strong>propriedades</strong> e
+    <strong>valores</strong>.<br>
+    - Seletores podem ser: por tipo, por classe ou por id.<br>
+    - O uso de classes é a forma mais prática e comum no dia a dia.<br>
+</p>
