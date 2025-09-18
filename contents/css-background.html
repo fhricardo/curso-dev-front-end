@@ -22,18 +22,33 @@
 <h2>Background Image</h2>
 <div class="css">
     <pre><code>div {
-    background-image: url('assets/sunflower.webp');
+    background-image: url('../assets/sunflower.webp');
 }</code></pre>
 </div>
 
 <div class="browser bg-default">
 </div>
-
+<div class="obs">
+    <p>É importante lembrar que se estivermos utilizando a
+        estrutrua de pasta abaixo:</p>
+    <pre>   site/
+    +-css/
+    | +- style.css
+    +-assets/
+    | +- imagem.webp
+    index.html
+    </pre>
+    <p>O caminho do arquivo de imagem deve ser relativo, ou seja, é necessário indicar no valor da url da propriedade
+        <code>background-image</code> que deve-se sair do diretório css (../), depois acessar o diretório de imagens
+        (assets/) para alcançar corretamente o arquivo da imagem.
+    </p>
+    <p></p>
+</div>
 <h2>Background Repeat</h2>
 <p>Por padrão, a imagem de fundo se repete. Podemos controlar isso:</p>
 <div class="css">
     <pre><code>div {
-    background-image: url('assets/sunflower.webp');
+    background-image: url('../assets/sunflower.webp');
     background-repeat: no-repeat; /* outras opções: repeat-x, repeat-y */
 }</code></pre>
 </div>
@@ -50,7 +65,7 @@
 <h2>Background Position</h2>
 <div class="css">
     <pre><code>div {
-    background-image: url('assets/sunflower.webp');
+    background-image: url('../assets/sunflower.webp');
     background-repeat: no-repeat;
     background-position: right bottom; /* ou valores em px/% */
 }</code></pre>
@@ -63,7 +78,7 @@
 <p>Podemos controlar o tamanho da imagem de fundo:</p>
 <div class="css">
     <pre><code>div {
-    background-image: url('assets/flower-field.webp');
+    background-image: url('../assets/flower-field.webp');
     background-size: cover; /* outras opções: contain, valores em px/% */
 }</code></pre>
 </div>
@@ -85,7 +100,7 @@
 <p>Controla se o fundo rola junto com a página ou fica fixo:</p>
 <div class="css">
     <pre><code>div {
-    background-image: url('assets/flower-field.webp');
+    background-image: url('../assets/flower-field.webp');
     background-attachment: fixed; /* ou scroll (padrão) */
 }</code></pre>
 </div>
@@ -97,7 +112,7 @@
 <p>Podemos resumir todas as propriedades em uma única linha:</p>
 <div class="css">
     <pre><code>div {
-    background: url('assets/sunflower.webp') 
+    background: url('../assets/sunflower.webp') 
                 no-repeat right top / cover 
                 fixed;
 }</code></pre>
@@ -116,3 +131,7 @@
     - <code>background-attachment</code>: fixa ou rola o fundo (scroll, fixed).<br>
     - <code>background</code>: shorthand para agrupar todas as propriedades.<br>
 </p>
+<div class="tip">
+    <p>É possível combinar as diversas propriedades de background e com isso alcançar diferente efeitos em suas páginas.
+    </p>
+</div>
