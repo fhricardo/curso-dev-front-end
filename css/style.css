@@ -368,9 +368,10 @@ main {
         }
 
         p,
-        ul {
+        ul,
+        ol {
             padding-left: 1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
 
             code {
                 font-family: "Reddit Mono", monospace;

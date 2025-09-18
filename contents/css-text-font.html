@@ -1,0 +1,192 @@
+<h1>Propriedades de Fontes e Textos</h1>
+
+<p>
+    Além das cores, podemos controlar de forma detalhada como o texto aparece na tela:
+    tipo da fonte, tamanho, espaçamento, estilos e até aplicar fontes externas
+    como as do <strong>Google Fonts</strong>.
+</p>
+
+<h2>Font Family</h2>
+<p>A propriedade <code>font-family</code> permite que seja definida a família tipográfica a ser utilizada no projeto.
+    Basicamente, é a propriedade que possibilita escolher a fonte que queremos utilizar em uma determinada parte da
+    nossa página.</p>
+<div class="css">
+    <pre><code>p {
+    font-family: Arial, Helvetica, sans-serif;
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="font-family:Arial, Helvetica, sans-serif; padding:5px;">
+        Texto com fonte Arial (ou Helvetica/Sans-serif se não disponível).
+    </p>
+</div>
+<h3>Web Safe Font</h3>
+<p>As <strong>Web Safe Fonts</strong> ou <em>Fontes Seguras para Web</em> são conjuntos de famílias tipográficas comuns
+    na maioria dos dispositivos e que permitem a renderização mais semelhante ao projeto original, reduzindo problemas
+    de layout ocasionados por troca de fontes do projeto</p>
+<h4>Entendendo as Fontes para Web</h4>
+<p>Fontes são programas de computadores e, desta forma, precisam estar instaladas para que sejam utilizadas.</p>
+<p>Desenvolver um projeto web com uma fonte instalada em nosso computador pode não ser uma boa ideia, uma vez que, após
+    publicado na web, o nosso site não vai contar com aquela fonte utilizada e não temos como identificar se o usuário
+    tem ou não aquela fonte específica instalada, o que pode ocasionar problemas com o layout e a correta exibição do
+</p>
+<p>O bloco de declaração de família tipográfica que utiliza Web Safe Fonts geralmente é apresentado da maneira exibida
+    abaixo:</p>
+<div class="css">
+    <pre><code>p {
+    font-family: Arial, Helvetica, sans-serif;
+}</code></pre>
+</div>
+<p>Onde são apresentadas duas ou mais famílias tipográficas semelhantes, basicamente funcionando da seguinte forma:
+    Utilize a fonte <strong>Arial</strong>, caso não esteja disponível, utilize <strong>Helvetica</strong> e, em último
+    caso, utilize <strong>sans-serif</strong>.</p>
+<div class="obs">
+    <p>Antes de publicar seu site, verifique como as fontes são exibidas em diferente navegadores e dispositivos.</p>
+</div>
+<h2>Font Size e Font Weight</h2>
+<p>As propriedades <code>font-size</code> e <code>font-weight</code> são responsáveis, respectivamente, pela definição
+    de tamanho e peso (espessura) das fontes no projeto.</p>
+<div class="css">
+    <pre><code>p {
+    font-size: 20px;     /* tamanho do texto */
+    font-weight: bold;   /* espessura: normal, bold, 100–900 */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="font-size:20px; font-weight:bold; padding:5px;">
+        Texto maior e em negrito.
+    </p>
+</div>
+<div class="tip">
+    <p>Para utilizar diferentes espessuras em fontes é recomendado utilizar uma família tipográfica que possua as
+        variações desejadas.</p>
+</div>
+<h2>Font Style e Text Transform</h2>
+<p>A propriedade <code>font-style</code> é responsável por incluir o aspecto itálico ou oblíquo em fontes e assim como
+    informado na dica do tópico anterior, é recomendado que a família tipográfica selecionada possua essas variações.
+</p>
+<p>Já a propriedade <code>text-transform</code> permite que a caixa de um conjunto selecionado seja modificada, contando
+    com variações como <strong>UPPERCASE</strong>
+    (todas as letras em maiúsculas), <strong>lowercase</strong> (todas as letras em minúsculas) e
+    <strong>Capitalize</strong> (primeira letra de cada palavra em maiúscula).
+</p>
+<div class="css">
+    <pre><code>p {
+    font-style: italic;       /* normal, italic, oblique */
+    text-transform: uppercase; /* lowercase, capitalize */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="font-style:italic; text-transform:uppercase; padding:5px;">
+        Texto itálico e em MAIÚSCULAS.
+    </p>
+</div>
+
+<h2>Text Decoration</h2>
+<p>A propriedade <code>text-decoration</code> permite que seja definido o tipo de decoração do texto, por exemplo, em
+    uma tag &lt;a&gt;, por padrão, o texto é exibido sublinhado (underline) e, utilizando esta propriedade, é possível
+    alterar essa exibição.</p>
+<div class="css">
+    <pre><code>a {
+    text-decoration: none; /* underline, overline, line-through */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <a href="#" style="text-decoration:none; color:blue;">Link sem sublinhado</a>
+</div>
+
+<h2>Line Height e Letter Spacing</h2>
+
+<p>O uso da propriedade <code>line-height</code> é essencial para melhorar a legibilidade de textos em páginas web. Ao
+    ajustar a altura das linhas, é possível criar um espaçamento mais confortável entre elas, reduzindo a sensação de
+    "amontoamento" do conteúdo. Isso é especialmente importante em textos longos, pois proporciona uma experiência de
+    leitura mais agradável e menos cansativa para o usuário, além de contribuir para um layout mais organizado e
+    visualmente equilibrado.</p>
+
+<p>Já a propriedade <code>letter-spacing</code> permite controlar o espaçamento entre as letras, o que pode ser útil
+    para destacar títulos, criar efeitos visuais ou melhorar a legibilidade de fontes específicas. Um espaçamento maior
+    entre as letras pode ajudar a evitar que os caracteres pareçam muito próximos, especialmente em tamanhos pequenos ou
+    em fontes mais decorativas. Por outro lado, ajustes sutis podem ser usados para refinar a estética do texto,
+    garantindo harmonia com o design geral da página.</p>
+<div class="css">
+    <pre><code>p {
+    line-height: 1.8;     /* altura da linha */
+    letter-spacing: 3px;  /* espaço entre letras */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="line-height:1.8; letter-spacing:3px;">
+        Texto com maior altura de linha, espaçamento adicional entre letras, proporcionando melhor legibilidade e uma
+        apresentação mais agradável para leitura em diferentes dispositivos.
+    </p>
+</div>
+
+<h2>Google Fonts</h2>
+<p>
+    Podemos usar fontes externas no site. O <strong>Google Fonts</strong> oferece
+    diversas opções gratuitas. Basta incluir o link da fonte no HTML e usar no CSS.
+</p>
+<ol>
+    <li>Acesse o site do <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.</li>
+    <li>Pesquise e selecione a fonte desejada.</li>
+    <li>Escolha os estilos (weights) da fonte que deseja utilizar.</li>
+    <li>Copie o link gerado na seção "Use on the web".</li>
+    <li>Inclua o link no <code>&lt;head&gt;</code> do seu arquivo HTML:
+        <div class="html">
+            <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;</code></pre>
+        </div>
+
+    </li>
+    <li>No arquivo CSS, utilize a fonte com a propriedade <code>font-family</code>:
+        <div class="css">
+            <pre><code>p {
+    font-family: 'Roboto', sans-serif;
+}</code></pre>
+        </div>
+
+    </li>
+    <p>Atualize a página no navegador para visualizar a nova fonte aplicada. </p>
+
+</ol>
+<ol>
+
+    <h4>Alternativa</h4>
+    <li>Como alternativa, podemos utilizar também o link de importação da fonte diretamente para nosso arquivo CSS.Basta
+        seguir os passo acima, porém ao invés de copiar o link para o arquivo HTML, utilizaremos a regra de importação
+        para o arquivo CSS:
+    </li>
+    <div class="css">
+        <code><pre>&commat;import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');</pre></code>
+    </div>
+    <li>após copiar, basta colar na primeira linha do nosso arquivo CSS e utilizar a propriedade
+        <code>font-family</code>
+    </li>
+    <div class="css">
+        <pre><code>p {
+    font-family: 'Roboto', sans-serif;
+}</code></pre>
+    </div>
+</ol>
+<div class="browser">
+    <p style="font-family:'Roboto', sans-serif; padding:5px;">
+        Texto usando a fonte Roboto do Google Fonts.
+    </p>
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - <code>font-family</code>: define a fonte (usar famílias de fallback).<br>
+    - <code>font-size</code>: controla o tamanho do texto.<br>
+    - <code>font-weight</code>: espessura da fonte (normal, bold, 100–900).<br>
+    - <code>font-style</code>: estilo (normal, italic, oblique).<br>
+    - <code>text-transform</code>: transformação de maiúsculas/minúsculas.<br>
+    - <code>text-decoration</code>: sublinhado, tachado, etc.<br>
+    - <code>line-height</code>: altura da linha (importante para legibilidade).<br>
+    - <code>letter-spacing</code>, <code>word-spacing</code>: espaçamentos de texto.<br>
+    - <strong>Google Fonts</strong>: permite usar fontes externas facilmente.<br>
+</p>
