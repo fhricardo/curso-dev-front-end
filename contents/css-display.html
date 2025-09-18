@@ -1,0 +1,91 @@
+<h1>Aula - Propriedade Display no CSS</h1>
+
+<p>A propriedade <code>display</code> é uma das mais importantes do CSS, pois define como um elemento HTML será exibido
+    na página.
+    Ela controla o <strong>comportamento visual</strong> dos elementos e influencia no fluxo do layout.</p>
+
+<h2>Principais valores de display</h2>
+
+<ul>
+    <li><strong>block</strong>: o elemento ocupa toda a largura disponível e sempre começa em uma nova linha.
+        Exemplos: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;...&lt;h6&gt;</code>.</li>
+    <li><strong>inline</strong>: o elemento ocupa apenas o espaço necessário ao seu conteúdo e não quebra linha.
+        Exemplos: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code;&lt;strong&gt;< /code>.</li>
+    <li><strong>inline-block</strong>: semelhante ao inline, mas permite definir largura (<code>width</code>) e altura
+        (<code>height</code>).</li>
+    <li><strong>none</strong>: oculta completamente o elemento, removendo-o do fluxo da página.</li>
+    <li><strong>flex</strong>: transforma o elemento em um container flexível, usado para criar layouts modernos e
+        responsivos.</li>
+    <li><strong>grid</strong>: transforma o elemento em um container de grid, permitindo organizar elementos em linhas e
+        colunas.</li>
+</ul>
+
+<h2>Exemplos básicos</h2>
+
+<div class="css">
+    <pre><code>/* Elemento em bloco */
+div {
+    display: block;
+}
+
+/* Elemento em linha */
+span {
+    display: inline;
+}
+
+/* Elemento em linha com controle de largura/altura */
+button {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+}
+</code></pre>
+</div>
+
+<h2>Diferença entre block e inline</h2>
+
+<p>Imagine o texto abaixo:</p>
+
+<div class="browser">
+    <p>Texto com <span>inline</span> e outro com <strong style="display:block">block.</strong></p>
+</div>
+
+<p>No exemplo acima, o <code>&lt;span&gt;</code> continua na mesma linha, enquanto o <code>&lt;strong&gt;</code> aparece
+    em uma nova linha.</p>
+
+<h2>Display: none vs visibility: hidden</h2>
+
+<p>É comum confundir as duas propriedades:</p>
+<ul>
+    <li><code>display: none</code> → o elemento <strong>desaparece</strong> e não ocupa espaço.</li>
+    <li><code>visibility: hidden</code> → o elemento <strong>fica invisível</strong>, mas ainda ocupa espaço na página.
+    </li>
+</ul>
+
+<h2>Flex e Grid (introdução rápida)</h2>
+
+<p>Além dos valores básicos, existem os modelos modernos de layout:</p>
+
+<ul>
+    <li><strong>display: flex</strong> → organiza os itens em linha ou coluna, permitindo alinhamentos avançados.</li>
+    <li><strong>display: grid</strong> → organiza os itens em linhas e colunas, muito útil para layouts de páginas
+        complexos.</li>
+</ul>
+
+<div class="obs">
+    <p>Esses dois modos de layout (<strong>flex</strong> e <strong>grid</strong>) serão aprofundados em aulas futuras,
+        mas é importante já conhecer a existência deles.</p>
+</div>
+
+<h2>Resumo</h2>
+<ul>
+    <li><code>block</code> → ocupa a largura toda e quebra linha.</li>
+    <li><code>inline</code> → ocupa só o espaço do conteúdo e não quebra linha.</li>
+    <li><code>inline-block</code> → mistura dos dois: fica em linha, mas aceita largura e altura.</li>
+    <li><code>none</code> → some do layout.</li>
+    <li><code>flex</code> e <code>grid</code> → usados para layouts modernos e responsivos.</li>
+</ul>
+
+<div class="tip">
+    <p>Uma boa forma de aprender display é brincar trocando o valor nos elementos e observando o efeito na página.</p>
+</div>

@@ -1,0 +1,143 @@
+<h1>Aula - Sizing & Position no CSS</h1>
+
+<p>Nesta aula vamos aprender a controlar o <strong>tamanho</strong> e o <strong>posicionamento</strong> dos elementos na
+    página. Esses conceitos são fundamentais para estruturar layouts e deixar o design mais organizado.</p>
+
+<h2>Controlando Tamanhos - Sizing</h2>
+
+<p>As principais propriedades para definir o tamanho de um elemento são:</p>
+
+<ul>
+    <li><strong>width</strong>: define a largura do elemento.</li>
+    <li><strong>height</strong>: define a altura do elemento.</li>
+    <li><strong>max-width</strong>: largura máxima que o elemento pode ter.</li>
+    <li><strong>min-width</strong>: largura mínima que o elemento deve ter.</li>
+    <li><strong>max-height</strong>: altura máxima.</li>
+    <li><strong>min-height</strong>: altura mínima.</li>
+</ul>
+
+<div class="css">
+    <pre><code>div {
+    width: 300px;
+    height: 200px;
+    max-width: 100%;
+}
+</code></pre>
+</div>
+
+<div class="obs">
+    <p>Usar <code>max-width</code> com <code>100%</code> é uma prática comum para tornar o layout mais responsivo,
+        evitando que o elemento ultrapasse a largura da tela.</p>
+</div>
+
+<h2>Box-sizing</h2>
+
+<p>O <code>box-sizing</code> define como o navegador calcula o tamanho total do elemento:</p>
+
+<ul>
+    <li><strong>content-box (padrão)</strong>: largura/altura aplicam-se apenas ao conteúdo. Padding e borda são
+        adicionados depois.</li>
+    <li><strong>border-box</strong>: largura/altura já incluem conteúdo, padding e borda.</li>
+</ul>
+
+<div class="css">
+    <pre><code>div {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+</code></pre>
+</div>
+
+<div class="tip">
+    <p>É comum aplicar <code>box-sizing: border-box;</code> no projeto inteiro, pois facilita o controle de medidas.</p>
+</div>
+
+<h2>Position</h2>
+
+<p>A propriedade <code>position</code> controla como os elementos são posicionados na página.</p>
+
+<ul>
+    <li><strong>static</strong> (padrão): segue o fluxo normal da página.</li>
+    <li><strong>relative</strong>: permite mover o elemento em relação à sua posição original (<code>top</code>,
+        <code>right</code>, <code>bottom</code>, <code>left</code>).
+    </li>
+    <li><strong>absolute</strong>: posiciona o elemento em relação ao ancestral mais próximo que tenha
+        <code>position</code> diferente de static.
+    </li>
+    <li><strong>fixed</strong>: fixa o elemento em relação à janela do navegador, mesmo ao rolar a página.</li>
+    <li><strong>sticky</strong>: mistura de relative e fixed; o elemento se move até certo ponto e depois “gruda” na
+        tela.</li>
+</ul>
+
+<h3>Exemplo de Position</h3>
+
+<div class="css">
+    <pre><code>.container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background: lightgray;
+}
+
+.box {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background: tomato;
+    width: 100px;
+    height: 100px;
+}
+</code></pre>
+</div>
+
+<div class="browser">
+    <div style="position:relative;width:200px;height:100px;background:#ddd;">
+        <div style="position:absolute;top:10px;left:10px;width:50px;height:50px;background:tomato;"></div>
+    </div>
+</div>
+
+<h2>Z-index</h2>
+<p>Apesar de utilizarmos um padrão bidimensional em nossas páginas da web, onde temos como um padrão apenas largura e
+    altura, conseguimos simular a profundidade em nossos projetos com base na ordem em que exibimos os conteúdos.</p>
+<p>Quando elementos se sobrepõem, o <code>z-index</code> define quem fica por cima ou por baixo: um valor maior
+    corresponde a um posicionamento superior - mais próximo do usuário - e um valor menor, um posicionamento mais
+    abaixo.</p>
+
+<div class="css">
+    <pre><code>.box1 {
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+}
+
+.box2 {
+    background-color: blue;
+    position: absolute;
+    z-index: 2; /* Fica acima da box1 */
+}
+</code></pre>
+</div>
+<div class="browser">
+    <div style="position: relative; width: 300px;height: 300px;">
+        <div style="width: 200px;height: 200px;background-color: red;position: absolute;"></div>
+        <div
+            style="width: 200px;height: 200px;background-color: blue;position: absolute;top: 0;left: 0;transform: translate(50%,50%);">
+        </div>
+    </div>
+</div>
+
+<h2>Resumo</h2>
+<ul>
+    <li>Use <code>width</code> e <code>height</code> para definir tamanhos.</li>
+    <li><code>min-</code> e <code>max-</code> ajudam a dar limites ao dimensionamento.</li>
+    <li><code>box-sizing: border-box</code> é recomendado para projetos.</li>
+    <li><code>position</code> controla como o elemento é posicionado na página.</li>
+    <li><code>z-index</code> resolve sobreposição de elementos.</li>
+</ul>
+
+<div class="tip">
+    <p>Teste diferentes combinações de <code>position</code> e <code>z-index</code> para entender como os elementos
+        interagem no layout.</p>
+</div>
