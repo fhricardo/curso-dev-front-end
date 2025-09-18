@@ -9,6 +9,7 @@
 :root {
     --lingrad: linear-gradient(180deg, #b9b9b9, #d3d3d3);
     --light: #fafafa;
+    --light-gray: #e6e6e6;
     --dark: #010938;
     --mid: #3a5f96;
     --active: #8993BE;
@@ -580,11 +581,8 @@ main {
         .browser {
             all: revert;
             box-sizing: content-box !important;
-            background-image: url(../assets/browser-bar.svg);
-            background-position: top left;
-            background-repeat: no-repeat;
             padding: 2.5rem .5rem .5rem .5rem !important;
-            border: 1px solid #48484840;
+            border: 1px solid var(--light-gray);
             border-radius: .5rem;
             display: block;
             background-color: #fff;
@@ -593,6 +591,7 @@ main {
             color: #000;
             font: 1rem serif;
             position: relative;
+            overflow: hidden;
 
             p,
             ul,
@@ -726,7 +725,83 @@ main {
                 font-weight: 500;
                 font-size: .875rem;
                 color: #606060;
+                z-index: 20;
             }
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2rem;
+                background-color: var(--light-gray);
+                background-image: url(../assets/browser-bar.svg);
+                background-position: top left;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
+
+        }
+
+        /* Backgrounds */
+        .bg-default {
+            background-image: url(../contents/assets/sunflower.webp);
+            height: 200px;
+            background-position: 0rem 2rem;
+        }
+
+        .bg-no-repeat {
+            background-image: url(../contents/assets/sunflower.webp);
+            height: 200px;
+            background-position: 0rem 2rem;
+            background-repeat: no-repeat;
+        }
+
+        .bg-repeat-x {
+            background-image: url(../contents/assets/sunflower.webp);
+            height: 200px;
+            background-position: 0rem 2rem;
+            background-repeat: repeat-x;
+        }
+
+        .bg-repeat-y {
+            background-image: url(../contents/assets/sunflower.webp);
+            height: 200px;
+            background-position: 0rem 2rem;
+            background-repeat: repeat-y;
+        }
+
+        .bg-pos-rb {
+            background-image: url(../contents/assets/sunflower.webp);
+            height: 200px;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+
+        .bg-size-auto {
+            background-image: url(../contents/assets/flower-field.webp);
+            height: 200px;
+
+        }
+
+        .bg-size-contain {
+            background-image: url(../contents/assets/flower-field.webp);
+            height: 200px;
+            background-size: contain;
+        }
+
+        .bg-size-cover {
+            background-image: url(../contents/assets/flower-field.webp);
+            height: 200px;
+            background-size: cover;
+        }
+
+        .bg-attachment {
+            background-image: url(../contents/assets/flower-field.webp);
+            height: 200px;
+            background-size: cover;
+            background-attachment: fixed;
         }
     }
 }

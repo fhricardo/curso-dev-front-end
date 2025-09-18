@@ -1,0 +1,118 @@
+<h1>Propriedades de Background</h1>
+
+<p>
+    O <strong>background</strong> é o plano de fundo dos elementos HTML.
+    Com ele podemos aplicar cores, imagens, controlar repetição, posição e até o
+    comportamento do fundo ao rolar a página.
+</p>
+
+<h2>Background Color</h2>
+<div class="css">
+    <pre><code>p {
+    background-color: lightblue; /* cor de fundo */
+}</code></pre>
+</div>
+
+<div class="browser">
+    <p style="background-color: lightblue; padding:10px;">
+        Fundo azul claro aplicado ao parágrafo.
+    </p>
+</div>
+
+<h2>Background Image</h2>
+<div class="css">
+    <pre><code>div {
+    background-image: url('assets/sunflower.webp');
+}</code></pre>
+</div>
+
+<div class="browser bg-default">
+</div>
+
+<h2>Background Repeat</h2>
+<p>Por padrão, a imagem de fundo se repete. Podemos controlar isso:</p>
+<div class="css">
+    <pre><code>div {
+    background-image: url('assets/sunflower.webp');
+    background-repeat: no-repeat; /* outras opções: repeat-x, repeat-y */
+}</code></pre>
+</div>
+<h4>no-repeat</h4>
+<div class="browser bg-no-repeat">
+</div>
+<h4>repeat-x</h4>
+<div class="browser bg-repeat-x">
+</div>
+<h4>repeat-y</h4>
+<div class="browser bg-repeat-y">
+</div>
+
+<h2>Background Position</h2>
+<div class="css">
+    <pre><code>div {
+    background-image: url('assets/sunflower.webp');
+    background-repeat: no-repeat;
+    background-position: right bottom; /* ou valores em px/% */
+}</code></pre>
+</div>
+
+<div class="browser bg-pos-rb">
+</div>
+
+<h2>Background Size</h2>
+<p>Podemos controlar o tamanho da imagem de fundo:</p>
+<div class="css">
+    <pre><code>div {
+    background-image: url('assets/flower-field.webp');
+    background-size: cover; /* outras opções: contain, valores em px/% */
+}</code></pre>
+</div>
+<h4>background-size: auto</h4>
+<p>Mostra a imagem em seu tamanho normal, cortando partes que não podem ser exibidas e repetindo onde for necessário
+    (caso a propriedade background-repeat for definida como repeat)</p>
+<div class="browser bg-size-auto">
+</div>
+<h4>background-size: contain</h4>
+<p>Redimensiona automaticamente a imagem para certificar que ela seja exibida em sua totalidade, repetindo caso a
+    propriedade background-repeat esteja definida como repeat.</p>
+<div class="browser bg-size-contain">
+</div>
+<h4>background-size: cover</h4>
+<p>Redimensiona a imagem para que ela cubra toda a área onde foi aplicada.</p>
+<div class="browser bg-size-cover">
+</div>
+<h2>Background Attachment</h2>
+<p>Controla se o fundo rola junto com a página ou fica fixo:</p>
+<div class="css">
+    <pre><code>div {
+    background-image: url('assets/flower-field.webp');
+    background-attachment: fixed; /* ou scroll (padrão) */
+}</code></pre>
+</div>
+<h4>Exemplo de background-attachment: fixed</h4>
+<div class="browser bg-attachment">
+</div>
+
+<h2>Shorthand: Background</h2>
+<p>Podemos resumir todas as propriedades em uma única linha:</p>
+<div class="css">
+    <pre><code>div {
+    background: url('assets/sunflower.webp') 
+                no-repeat right top / cover 
+                fixed;
+}</code></pre>
+</div>
+
+<div class="browser bg-no-repeat">
+</div>
+
+<h2>Resumo</h2>
+<p>
+    - <code>background-color</code>: cor de fundo.<br>
+    - <code>background-image</code>: adiciona imagem de fundo.<br>
+    - <code>background-repeat</code>: controla repetição (repeat, no-repeat, repeat-x, repeat-y).<br>
+    - <code>background-position</code>: posiciona a imagem (top, center, bottom, valores).<br>
+    - <code>background-size</code>: ajusta o tamanho da imagem (cover, contain, px/%).<br>
+    - <code>background-attachment</code>: fixa ou rola o fundo (scroll, fixed).<br>
+    - <code>background</code>: shorthand para agrupar todas as propriedades.<br>
+</p>
