@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- MODAL -->
     <div class="modal" id="meuModal">
         <div class="card">
             <div class="header">
@@ -22,25 +23,29 @@
             <div class="contentModal"></div>
         </div>
     </div>
-    <div class="top-bar">
-        <p class="lead">https://fhricardo.github.io/curso-dev-front-end/</p>
-    </div>
+    <!-- HEADER -->
     <header>
-        <div class="logo">
-            HTML5
+        <div class="top-bar">
+            <p class="lead">Desenvolvimento Front-end</p>
+            <p class="lead">https://fhricardo.github.io/curso-dev-front-end/</p>
         </div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="intro.html">Introdução</a>
-            <a href="html.html" class="active" aria-current="page">HTML</a>
-            <a href="css.html">CSS</a>
-            <a href="javascript.html">JavaScript</a>
-            <a href="projects.html">Projetos</a>
-            <a href="sobre.html">Sobre</a>
+            <h1>HTML 5</h1>
+            <i class="fa-solid fa-bars fa-2xl" id="toggleMenu"></i>
+            <ul id="menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="intro.html">Introdução</a></li>
+                <li><a href="html.html" class="active" aria-current="page">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="javascript.html">JavaScript</a></li>
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
         </nav>
     </header>
+    <!-- MAIN -->
     <main>
-        <aside class="menu">
+        <aside class="menu" id="submenu">
             <a href="#" onclick="loadPageContent('contents/html-intro.html')">Introdução</a>
             <a href="#" onclick="loadPageContent('contents/html-estrutura-basica.html')">Estrutura Básica</a>
             <a href="#" onclick="loadPageContent('contents/html-tags-de-texto.html')">Textos em HTML</a>

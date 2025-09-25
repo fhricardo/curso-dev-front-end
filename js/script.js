@@ -141,3 +141,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Menu responsivo
+const toggleBtn = document.getElementById("toggleMenu");
+const menu = document.getElementById("menu");
+console.log(toggleBtn)
+// Abre/fecha o menu 
+toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // evita fechar imediatamente 
+    menu.classList.toggle("showMenu");
+    console.log(menu)
+});
+// Fecha o menu ao clicar fora 
+document.addEventListener("click", (e) => {
+    if (menu.classList.contains("showMenu") && !menu.contains(e.target) && e.target !== toggleBtn) {
+        menu.classList.remove("showMenu"); console.log(menu)
+    }
+});
+// Submenu
+const submenu = document.getElementById("submenu");
+// Abre/fecha o menu 
+submenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // evita fechar imediatamente 
+    submenu.classList.toggle("showSubMenu");
+});
+// Fecha o menu ao clicar fora 
+document.addEventListener("click", (e) => {
+    if (submenu.classList.contains("showSubMenu") && !submenu.contains(e.target) && e.target !== toggleBtn) {
+        submenu.classList.remove("showSubMenu");
+    }
+});

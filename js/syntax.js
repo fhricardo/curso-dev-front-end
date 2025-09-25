@@ -40,7 +40,7 @@ function w3CodeColor(elmnt, mode) {
     var jsstringcolor = "cornflowerblue";
     var jsnumbercolor = "crimson";
     var jspropertycolor = "dodgerblue";
-    // elmntObj.style.fontFamily = "Consolas,'Courier New', monospace";
+    elmntObj.style.fontFamily = "'Reddit Mono', monospace";
     if (!lang) { lang = "html"; }
     if (lang == "html") { elmntTxt = htmlMode(elmntTxt); }
     if (lang == "css") { elmntTxt = cssMode(elmntTxt); }
