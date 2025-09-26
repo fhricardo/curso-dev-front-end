@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#2b1541">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#2b1541">
+
     <title>Dev Front-end | Material de Apoio</title>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/fontawesome.js" defer></script>
     <script src="js/script.js" defer></script>
+    <script src="js/syntax.js" defer></script>
 </head>
 
 <body>
@@ -36,7 +57,7 @@
                 <li><a href="html.html">HTML</a></li>
                 <li><a href="css.html">CSS</a></li>
                 <li><a href="javascript.html">JavaScript</a></li>
-                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
@@ -44,11 +65,11 @@
     <!-- MAIN -->
     <main>
         <aside class="menu" id="submenu">
-            <a href="#" onclick="loadPageContent('contents/intro.html')">Introdução</a>
-            <a href="#" onclick="loadPageContent('contents/conventions.html')">Convenções</a>
-            <a href="#" onclick="loadPageContent('contents/internet.html')">A Internet</a>
-            <a href="#" onclick="loadPageContent('contents/vscode.html')">O VS Code</a>
-            <a href="#" onclick="loadPageContent('contents/git.html')">O Git</a>
+            <a href="?modulo=intro&aula=intro">Introdução</a>
+            <a href="?modulo=intro&aula=conventions">Convenções</a>
+            <a href="?modulo=intro&aula=internet">A Internet</a>
+            <a href="?modulo=intro&aula=vscode">O VS Code</a>
+            <a href="?modulo=intro&aula=git">O Git</a>
         </aside>
         <section class="contents">
             <h1>Bem-vindo ao Curso de Desenvolvimento Front-end</h1>

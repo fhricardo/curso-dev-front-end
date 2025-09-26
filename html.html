@@ -4,12 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#2b1541">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#2b1541">
+
     <title>Dev Front-end | Material de Apoio</title>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/fontawesome.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/syntax.js" defer></script>
-
 </head>
 
 <body>
@@ -33,12 +52,12 @@
             <h1>HTML 5</h1>
             <i class="fa-solid fa-bars fa-2xl" id="toggleMenu"></i>
             <ul id="menu">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="intro.html">Introdução</a></li>
                 <li><a href="html.html" class="active" aria-current="page">HTML</a></li>
                 <li><a href="css.html">CSS</a></li>
                 <li><a href="javascript.html">JavaScript</a></li>
-                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
@@ -46,92 +65,29 @@
     <!-- MAIN -->
     <main>
         <aside class="menu" id="submenu">
-            <a href="#" onclick="loadPageContent('contents/html-intro.html')">Introdução</a>
-            <a href="#" onclick="loadPageContent('contents/html-estrutura-basica.html')">Estrutura Básica</a>
-            <a href="#" onclick="loadPageContent('contents/html-tags-de-texto.html')">Textos em HTML</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-01.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 01</a>
-            <a href="#" onclick="loadPageContent('contents/html-links.html')">Links e Navegação</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-02.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 02</a>
-            <a href="#" onclick="loadPageContent('contents/html-listas.html')">Listas</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-03.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 03</a>
-            <a href="#" onclick="loadPageContent('contents/html-tabelas.html')">Tabelas</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-04.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 04</a>
-            <a href="#" onclick="loadPageContent('contents/html-imagens.html')">Imagens</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-05.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 05</a>
-            <a href="#" onclick="loadPageContent('contents/html-midias-audio.html')">Mídias em HTML: Áudio</a>
-            <a href="#" onclick="loadPageContent('contents/html-midias-video.html')">Mídias em HTML: Vídeo</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-06.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 06</a>
-            <a href="#" onclick="loadPageContent('contents/html-formularios.html')">Formulários</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-07.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 07</a><a href="#"
-                onclick="loadPageContent('contents/html-containers.html')">Containers</a>
-            <a href="#" onclick="loadPageContent('contents/html-semantico.html')">HTML Semântico</a>
-            <a href="#" onclick="loadPageContent('contents/html-atividade-08.html')"><i
-                    class="fa-solid fa-caret-right"></i>Atividade 08</a>
-            <a href="#" onclick="loadPageContent('contents/html-entidades-simbolos.html')">Entidades e Símbolos</a>
+            <a href="?modulo=html&aula=intro">Introdução</a>
+            <a href="?modulo=html&aula=estrutura-basica">Estrutura Básica</a>
+            <a href="?modulo=html&aula=tags-de-texto">Textos em HTML</a>
+            <a href="?modulo=html&aula=atividade-01"><i class="fa-solid fa-caret-right"></i>Atividade 01</a>
+            <a href="?modulo=html&aula=links">Links e Navegação</a>
+            <a href="?modulo=html&aula=atividade-02"><i class="fa-solid fa-caret-right"></i>Atividade 02</a>
+            <a href="?modulo=html&aula=listas">Listas</a>
+            <a href="?modulo=html&aula=atividade-03"><i class="fa-solid fa-caret-right"></i>Atividade 03</a>
+            <a href="?modulo=html&aula=tabelas">Tabelas</a>
+            <a href="?modulo=html&aula=atividade-04"><i class="fa-solid fa-caret-right"></i>Atividade 04</a>
+            <a href="?modulo=html&aula=imagens">Imagens</a>
+            <a href="?modulo=html&aula=atividade-05"><i class="fa-solid fa-caret-right"></i>Atividade 05</a>
+            <a href="?modulo=html&aula=midias-audio">Mídias em HTML: Áudio</a>
+            <a href="?modulo=html&aula=midias-video">Mídias em HTML: Vídeo</a>
+            <a href="?modulo=html&aula=atividade-06"><i class="fa-solid fa-caret-right"></i>Atividade 06</a>
+            <a href="?modulo=html&aula=formularios">Formulários</a>
+            <a href="?modulo=html&aula=atividade-07"><i class="fa-solid fa-caret-right"></i>Atividade 07</a>
+            <a href="?modulo=html&aula=containers">Containers</a>
+            <a href="?modulo=html&aula=semantico">HTML Semântico</a>
+            <a href="?modulo=html&aula=atividade-08"><i class="fa-solid fa-caret-right"></i>Atividade 08</a>
+            <a href="?modulo=html&aula=entidades-simbolos">Entidades e Símbolos</a>
         </aside>
         <section class="contents">
-            <h1>Introdução à Linguagem HTML</h1>
-            <section>
-                <div class="text w75">
-                    <p>O HTML — sigla para <strong>HyperText Markup Language</strong> (Linguagem de Marcação de
-                        Hipertexto)
-                        — é a
-                        linguagem
-                        base da web. Ele é
-                        responsável por estruturar o conteúdo de uma página, organizando textos, imagens, vídeos, links
-                        e
-                        outros
-                        elementos que o usuário vê no navegador.</p>
-                    <p>O HTML surgiu no início da década de 1990, criado por <strong>Tim Berners-Lee</strong> no CERN
-                        (Organização Europeia para a Pesquisa Nuclear), com o objetivo de facilitar o compartilhamento
-                        de
-                        documentos científicos entre pesquisadores.
-                        A primeira versão, lançada em 1993, era bastante simples, mas abriu as portas para o que
-                        conhecemos hoje
-                        como internet.</p>
-                    <p>Com o tempo, a linguagem evoluiu significativamente. Do HTML 2.0 (1995) ao HTML 4.01 (1999),
-                        novas tags e
-                        recursos foram incorporados, permitindo páginas mais ricas e estruturadas.
-                        A maior revolução, no entanto, veio com o <strong>HTML5</strong>, lançado oficialmente em 2014,
-                        que
-                        trouxe suporte nativo para áudio, vídeo, elementos semânticos e APIs poderosas para interação e
-                        armazenamento local.</p>
-                </div>
-
-                <figure class="w25">
-                    <img src="contents/assets/html-logo.svg" alt="Logotipo do HTML5">
-                    <figcaption>Logo Oficial do HTML5</figcaption>
-                </figure>
-            </section>
-            <section>
-                <figure class="w25">
-                    <img src="contents/assets/Sir_Tim_Berners-Lee_(cropped).jpg" alt="sir Tim Berners-Lee">
-                    <figcaption>Sir Tim Berners-Lee, criador do HTML</figcaption>
-                </figure>
-                <div class="text w75">
-                    <p>Embora o HTML não seja uma linguagem de programação, ele é indispensável no desenvolvimento web.
-                        Ele funciona como o “esqueleto” de qualquer site ou aplicação web, sobre o qual o CSS aplica
-                        estilo e o
-                        JavaScript adiciona interatividade.</p>
-                    <p>Neste curso, vamos explorar o HTML de forma prática e completa — desde sua estrutura básica até
-                        recursos
-                        avançados do HTML5.
-                        Você aprenderá a criar páginas semânticas, acessíveis e bem estruturadas, capazes de se adaptar
-                        a
-                        diferentes dispositivos e contextos de uso.</p>
-                    <p>Dominar HTML é o primeiro passo para se tornar um desenvolvedor front-end competente.
-                        Afinal, entender como organizar e marcar corretamente o conteúdo é fundamental para que o
-                        design, a
-                        interatividade e a performance funcionem de forma harmoniosa.</p>
-                </div>
-            </section>
         </section>
 
     </main>

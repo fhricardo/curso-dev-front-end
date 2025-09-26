@@ -1,23 +1,16 @@
+// ======================
+// UTILIDADES
+// ======================
+
 // Atualiza o ano atual
 const yearElement = document.querySelector('#year');
 if (yearElement) {
-    const getCurrentYear = () => new Date().getFullYear();
-    yearElement.textContent = getCurrentYear();
+    yearElement.textContent = new Date().getFullYear();
 }
 
-// Funções para mostrar/ocultar respostas
-const toggleResponseVisibility = (show) => {
-    const responses = document.querySelectorAll('.responses');
-    responses.forEach(response => {
-        if (show) {
-            response.classList.remove('hidden');
-        } else {
-            response.classList.add('hidden');
-        }
-    });
-};
-
-// Alternar respostas com checkbox
+// ======================
+// TOGGLE DE RESPOSTAS
+// ======================
 const setupResponseToggle = () => {
     const checkbox = document.getElementById('toggleRespostas');
     if (!checkbox) return;
@@ -30,7 +23,9 @@ const setupResponseToggle = () => {
     });
 };
 
-// Carregar páginas
+// ======================
+// CARREGAR CONTEÚDOS
+// ======================
 const loadPageContent = (target) => {
     if (!target) return;
 
@@ -40,8 +35,10 @@ const loadPageContent = (target) => {
             const contentContainer = document.querySelector('.contents');
             if (contentContainer) {
                 contentContainer.innerHTML = html;
-                activateImageHover(); // Ativa comportamento após o conteúdo ser inserido
-                // Chama o realce de sintaxe
+
+                activateImageHover();
+
+                // Realce de sintaxe (se existir)
                 if (typeof applySyntax === 'function') {
                     applySyntax();
                 }
@@ -50,7 +47,32 @@ const loadPageContent = (target) => {
         .catch(error => console.error('Erro ao carregar página:', error));
 };
 
-// Função para trocar imagens no hover
+// Detecta os parâmetros da URL e carrega a página correspondente
+const loadFromURL = () => {
+    const params = new URLSearchParams(window.location.search);
+    const modulo = params.get("modulo");
+    const aula = params.get("aula");
+
+    if (modulo && aula) {
+        loadPageContent(`contents/${modulo}/${aula}.html`);
+    } else {
+        // fallback: conteúdo inicial
+        const path = window.location.pathname;
+        const page = path.split("/").pop();
+        const pageName = page.replace(".html", "");
+        if (pageName == 'index') {
+            loadPageContent(`contents/intro.html`);
+        } else if (pageName == 'sobre') {
+            loadPageContent(`contents/sobre.html`)
+        } else {
+            loadPageContent(`contents/${pageName}/intro.html`);
+        }
+    }
+};
+
+// ======================
+// IMAGENS COM HOVER
+// ======================
 const activateImageHover = () => {
     const figures = document.querySelectorAll('.example img');
     figures.forEach(img => {
@@ -58,29 +80,20 @@ const activateImageHover = () => {
         const hoverSrc = img.getAttribute('data-hover');
 
         if (hoverSrc) {
-            img.addEventListener('mouseover', () => {
-                img.setAttribute('src', hoverSrc);
-            });
-
-            img.addEventListener('mouseout', () => {
-                img.setAttribute('src', originalSrc);
-            });
+            img.addEventListener('mouseover', () => img.setAttribute('src', hoverSrc));
+            img.addEventListener('mouseout', () => img.setAttribute('src', originalSrc));
         }
     });
 };
 
-
-// Modal functions
+// ======================
+// MODAL
+// ======================
 const modal = document.querySelector("#meuModal");
-const modalContent = modal.querySelector(".contentModal");
+const modalContent = modal?.querySelector(".contentModal");
 
 const loadModalContent = async (url, selector = ".contentModal") => {
     if (!url || !modal || !modalContent) return;
-
-    // garante que o caminho sempre seja relativo à raiz
-    if (!url.startsWith("/")) {
-        url = "/" + url;
-    }
 
     try {
         const response = await fetch(url);
@@ -93,7 +106,6 @@ const loadModalContent = async (url, selector = ".contentModal") => {
 
         modalContent.innerHTML = content?.innerHTML || "<p>Conteúdo não encontrado.</p>";
 
-        // Mostrar modal com animação
         modal.style.display = "flex";
         requestAnimationFrame(() => modal.classList.add("show"));
     } catch (error) {
@@ -106,21 +118,52 @@ const loadModalContent = async (url, selector = ".contentModal") => {
 
 const closeModal = () => {
     if (!modal) return;
-
     modal.classList.remove("show");
     setTimeout(() => {
         modal.style.display = "none";
-        modalContent.innerHTML = ""; // Limpa conteúdo ao fechar
+        modalContent.innerHTML = "";
     }, 300);
 };
 
+// ======================
+// MENU RESPONSIVO
+// ======================
+const toggleBtn = document.getElementById("toggleMenu");
+const menu = document.getElementById("menu");
+const submenu = document.getElementById("submenu");
 
-// Inicialização quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", () => {
-    // Configura toggle de respostas (se existir)
-    if (typeof setupResponseToggle === "function") {
-        setupResponseToggle();
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("showMenu");
+    });
+}
+
+document.addEventListener("click", (e) => {
+    if (menu?.classList.contains("showMenu") && !menu.contains(e.target) && e.target !== toggleBtn) {
+        menu.classList.remove("showMenu");
     }
+});
+
+if (submenu) {
+    submenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        submenu.classList.toggle("showSubMenu");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (submenu.classList.contains("showSubMenu") && !submenu.contains(e.target)) {
+            submenu.classList.remove("showSubMenu");
+        }
+    });
+}
+
+// ======================
+// INICIALIZAÇÃO
+// ======================
+document.addEventListener("DOMContentLoaded", () => {
+    // Configura toggle de respostas
+    setupResponseToggle();
 
     // Delegação de eventos para modal-trigger
     document.addEventListener("click", (e) => {
@@ -133,42 +176,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Configura fechamento do modal
-    if (modal) {
-        document.querySelector("#meuModal .close")?.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) closeModal();
-        });
-    }
+    // Fechar modal
+    document.querySelector("#meuModal .close")?.addEventListener("click", closeModal);
+    modal?.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Links internos com query string (sem reload)
+    document.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if (link && link.href.includes("?modulo=")) {
+            e.preventDefault();
+            const url = new URL(link.href);
+
+            history.pushState({}, "", url); // atualiza URL
+            loadFromURL(); // carrega o conteúdo
+        }
+    });
+
+    // Carrega a página inicial com base na URL
+    loadFromURL();
 });
-// Menu responsivo
-const toggleBtn = document.getElementById("toggleMenu");
-const menu = document.getElementById("menu");
-console.log(toggleBtn)
-// Abre/fecha o menu 
-toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    // evita fechar imediatamente 
-    menu.classList.toggle("showMenu");
-    console.log(menu)
-});
-// Fecha o menu ao clicar fora 
-document.addEventListener("click", (e) => {
-    if (menu.classList.contains("showMenu") && !menu.contains(e.target) && e.target !== toggleBtn) {
-        menu.classList.remove("showMenu"); console.log(menu)
-    }
-});
-// Submenu
-const submenu = document.getElementById("submenu");
-// Abre/fecha o menu 
-submenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-    // evita fechar imediatamente 
-    submenu.classList.toggle("showSubMenu");
-});
-// Fecha o menu ao clicar fora 
-document.addEventListener("click", (e) => {
-    if (submenu.classList.contains("showSubMenu") && !submenu.contains(e.target) && e.target !== toggleBtn) {
-        submenu.classList.remove("showSubMenu");
-    }
+
+// Suporte ao botão voltar/avançar
+window.addEventListener("popstate", () => {
+    loadFromURL();
 });
